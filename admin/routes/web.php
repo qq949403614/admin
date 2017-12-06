@@ -12,9 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
-route::get('admin','AdminController@index');
-route::resource('user','UserController');
-route::resource('article','ArticleController');
-route::resource('cate','CateController');
+Route::get('/home','HomeController@index');
+Route::get('/registers','HomeController@registers');
+Route::post('/registers','HomeController@registers');
+Route::get('/register','HomeController@doregister');
+Route::get('/message','CommonController@message');
+Route::get('/confirm/{id}','HomeController@confirm');
+
+Route::get('/list','ListController@list');
+
+
+
+Route::get('admin','AdminController@index');
+Route::resource('user','UserController');
+Route::resource('article','ArticleController');
+Route::resource('cate','CateController');
