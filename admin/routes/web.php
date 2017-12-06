@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-route::get('admin','AdminController@index');
-route::resource('user','UserController');
-route::resource('article','ArticleController');
-route::resource('cate','CateController');
+Route::get('admin','AdminController@index');
+Route::resource('user','UserController');
+Route::resource('article','ArticleController');
+Route::resource('cate','CateController');

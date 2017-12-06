@@ -1,4 +1,4 @@
-@extends('admin.index')
+ @extends('admin.index')
 @section('title')
 <title>导航列表信息</title>
 @endsection

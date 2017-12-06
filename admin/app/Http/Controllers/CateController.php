@@ -76,6 +76,7 @@ class CateController extends Controller
     public function show($id)
     {
         //
+       
     }
 
     /**
@@ -87,6 +88,7 @@ class CateController extends Controller
     public function edit($id)
     {
         //
+         return view('admin.cate.edit');
     }
 
     /**
@@ -109,6 +111,14 @@ class CateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //删除数据
+        $navs = DB::table('navs')->where('id',$id)->first();
+        $path = $navs->path.'_'.$navs->id;
+        $res = DB::table('navs')->where('path','like',$path.'%')->delete();
+        if(DB::table('navs')->where('id',$id)->delete()){
+            return back()->with('msg','删除成功');
+        }else{
+            return back()->with('msg','删除失败');
+        }
     }
 }
