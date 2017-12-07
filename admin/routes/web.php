@@ -22,8 +22,10 @@ Route::get('/message','CommonController@message');
 Route::get('/confirm/{id}','HomeController@confirm');
 
 Route::get('/list','ListController@list');
-
-
+Route::get('/detail','DetailController@detail');
+Route::get('/contact','ContactController@contact');
+Route::get('/cart','CartController@cart');
+Route::get('/checkout','CheckoutController@checkout');
 
 Route::get('admin','AdminController@index');
 Route::resource('user','UserController');

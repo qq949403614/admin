@@ -1,28 +1,35 @@
 @extends('layouts.home')
-
 @section('content')
 	<div class="men">
 	<div class="container">
 	    <div class="col-md-12 register">
 		  	  <form method="post" action="/registers"> 
-				 <div class="register-top-grid col-md-6 col-md-offset-3" style="margin-top:20px;">
+				     <div class="form-group">
+				       <label>Username</label>
+				       <input type="text" class="form-control" name="username" />
+				     </div>
+				     <div class="form-group">
+				       <label>phone</label>
+				       <input type="text" class="form-control" name="phone" />
+				     </div>
+					<button type="button" id="send" class="btn btn-default btn-sm">发送验证码</button>
+						<div class="form-group">
+				       <label>phoneverify</label>
+				       <input type="text" class="form-control" name="verify" />
+				     </div>				
 					
-					 	<h3>PERSONAL INFORMATION</h3>
-						<input type="text" name="name" placeholder="username" style="margin-top:20px;">
-						<input type="text" name="phone" placeholder="phone" style="margin-top:20px;">
-						
-						<button type="button" id="send" class="btn btn-default btn-sm pull-left" style="margin-top:10px;">发送验证码</button>
-						<input type="text" name="phoneverify" placeholder="phoneverify" style="margin-top:20px;"> 
-						 <input type="text" name="email" placeholder="email" style="margin-top:20px;">
-						<input type="password" placeholder="password" style="margin-top:20px;">
-						<input type="password" placeholder="confirmpassword" style="margin-top:20px;">
-						<div class="register-but">
-						{{csrf_field()}}
-							<input type="submit" class="btn btn-red btn-md" value="register" style="margin-left:200px;">
-				   		</div>
-					
-				</div>
-			 </form>
+				     <div class="form-group">
+				       <label>password</label>
+				       <input type="password" class="form-control" name="password" />
+				     </div>
+				     <div class="form-group">
+				       <label>Email address</label>
+				       <input type="text" class="form-control" name="email" />
+				     </div>
+				     <div class="form-group">
+				       <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+				     </div>
+  			</form>
 			</div>
 		   </div>
 	 </div>
