@@ -5,31 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title></title>
-<!-- Latest Bootstrap min CSS -->
-<link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/bootstrap.min.css" type="text/css">
-<!-- Dropdownhover CSS -->
-<link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/bootstrap-dropdownhover.min.css" type="text/css">
-<!-- latest fonts awesome -->
-<link rel="stylesheet" href="/jiuyexiangmu/home/assets/font/css/font-awesome.min.css" type="text/css">
-<!-- simple line fonts awesome -->
-<link rel="stylesheet" href="/jiuyexiangmu/home/assets/simple-line-icon/css/simple-line-icons.css" type="text/css">
-<!-- stroke-gap-icons -->
-<link rel="stylesheet" href="/jiuyexiangmu/home/assets/stroke-gap-icons/stroke-gap-icons.css" type="text/css">
-<!-- Animate CSS -->
-<link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/animate.min.css" type="text/css">
-<!-- Style CSS -->
-<link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/style.css" type="text/css">
-<!--  baguetteBox -->
-<link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/baguetteBox.css">
-<!-- Owl Carousel Assets -->
-<link href="/jiuyexiangmu/home/assets/owl-carousel/owl.carousel.css" rel="stylesheet">
-<link href="/jiuyexiangmu/home/assets/owl-carousel/owl.theme.css" rel="stylesheet">
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+@include('/home.laouts.css')
 </head>
 <body>
 <!--  Preloader  -->
@@ -38,144 +14,7 @@
 	</div>
 </div>
 <header>
-	<!--  top-header  -->
-	<div class="top-header">
-		<div class="container">
-
-			<div class="col-md-6">
-				<div class="top-header-left">
-					<ul>
-						<li>
-							<div class="dropdown">
-								<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-								  Concern complex <i class="fa fa-angle-down" aria-hidden="true"></i>
-								</a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Help center</a></li>
-									<li><a href="#">Add to favorites</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<div class="dropdown">
-								<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-									web nav <i class="fa fa-angle-down" aria-hidden="true"></i>
-								</a>
-								<ul class="dropdown-menu">
-									<li><a href="#">complex</a></li>
-									<li><a href="#">complex</a></li>
-									<li><a href="#">complex</a></li>
-									<li><a href="#">complex</a></li>
-									<li><a href="#">complex</a></li>									
-								</ul>
-							</div>
-						</li>
-						<li>
-							<span><a href="/registers" class="btn btn-default dropdown-toggle">Hello Custumer - Login or Registe!</a></span>
-
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="top-header-right">
-					<ul>
-						<li><i class="icon-location-pin icons" aria-hidden="true"></i> Store Location</li>
-						<li><i class="icon-note icons" aria-hidden="true"></i><a href="#" style="color:#fff;">My orders</a></li>
-						<li>
-							<div class="dropdown">
-								<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-									<i aria-hidden="true"></i> Personal center
-								</a>
-								<ul class="dropdown-menu">
-									<li><a href="#">My Account</a></li>
-									<li><a href="#">Change Password</a></li>
-									<li><a href="#">Change Address</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--  /top-header  -->
-	</div>
-	<section class="top-md-menu">
-		<div class="container">
-			<div class="col-sm-3">
-				<div class="logo">
-					<h6><img src="/jiuyexiangmu/home/assets/images/logo.png" alt="logo" /></h6>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<!-- Search box Start -->
-				<form>
-					<div class="well carousel-search hidden-phone">
-						<div class="btn-group">
-							<a class="btn dropdown-toggle btn-select" data-toggle="dropdown" href="#">All Categories <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Item I</a></li>
-								<li><a href="#">Item II</a></li>
-								<li><a href="#">Item III</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Other</a></li>
-							</ul>
-						</div>
-						<div class="search">
-							<input type="text" placeholder="Select prodect" />
-						</div>
-						<div class="btn-group">
-							<button type="button" id="btnSearch" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i></button>
-						</div>
-					</div>
-				</form>
-				<!-- Search box End -->
-			</div>
-			<div class="col-sm-3">
-				<!-- cart-menu -->
-				<div class="cart-menu">
-					<ul>
-						<li><a href="#"><i class="icon-heart icons" aria-hidden="true"></i></a><span class="subno">1</span><strong>Your Wishlist</strong></li>
-						<li class="dropdown">
-							<a href="#" data-toggle="dropdown" data-hover="dropdown"><i class="icon-basket-loaded icons" aria-hidden="true"></i></a><span class="subno">2</span><strong>Your Cart</strong>
-							<div class="dropdown-menu  cart-outer">
-								<div class="cart-content">
-									<div class="col-sm-4 col-md-4"><img src="/jiuyexiangmu/home/assets/images/elec-img4.jpg" alt="13"></div>
-									<div class="col-sm-8 col-md-8">
-										<div class="pro-text">
-											<a href="#">Apple Macbook Retina 23’’ </a>
-											<div class="close">x</div>
-											<strong>1 × $290.00</strong>
-										</div>
-									</div>
-								</div>
-								<div class="cart-content">
-									<div class="col-sm-4 col-md-4"><img src="/jiuyexiangmu/home/assets/images/elec-img3.jpg" alt="13"></div>
-									<div class="col-sm-8 col-md-8">
-										<div class="pro-text">
-											<a href="#">Apple Macbook Retina 23’’ </a>
-											<div class="close">x</div>
-											<strong>1 × $290.00</strong>
-										</div>
-									</div>
-								</div>
-								<div class="total">
-									<div class="col-md-6 text-left">
-										<span>Shipping :</span>
-										<strong>Total :</strong>
-									</div>
-									<div class="col-md-6 text-right">
-										<strong>$0.00</strong>
-										<strong>$160.00</strong>
-									</div>
-								</div>
-								<a href="shopping-cart.html" class="cart-btn">VIEW CART </a> <a href="checkout.html" class="cart-btn">CHECKOUT</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<!-- cart-menu End -->
-			</div>
+			@include('/home.laouts.head')
 			<div class="main-menu">
 				<!--  nav  -->
 				<nav class="navbar navbar-inverse navbar-default">
@@ -300,13 +139,13 @@
 									</li>
 								</ul>
 							</li>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="list.html">List</a></li>
-							<li><a href="grid.html">Grid</a></li>
-							<li><a href="shop-detail.html">Shop-detail</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="shopping-cart.html">Shopping-cart</a></li>
-							<li><a href="checkout.html">Checkout</a></li>
+							<li><a href="/index">Home</a></li>
+							<li><a href="/list">List</a></li>
+							<li><a href="/grid">Grid</a></li>
+							<li><a href="/detail">Shop-detail</a></li>
+							<li><a href="/contact">Contact</a></li>
+							<li><a href="/cart">Shopping-cart</a></li>
+							<li><a href="/checkout">Checkout</a></li>
 						</ul>
 						<!-- /.navbar-collapse -->
 					</div>
@@ -6028,99 +5867,7 @@
 
 <div style="border-top:4px solide red; height:1px;"></div>
 <!-- /newsletter -->
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<!-- f-weghit -->
-				<div class="f-weghit">
-					<img src="/jiuyexiangmu/home/assets/images/logo.png" alt="logo" />
-					<p><strong>Complex</strong> is a premium Templates theme with advanced admin module. It’s extremely customizable, easy to use and fully responsive and retina ready.</p>
-					<ul>
-						<li><i class="icon-location-pin icons" aria-hidden="true"></i> <strong>Add:</strong> 1234 Heaven Stress, Beverly Hill, Melbourne, USA.</li>
-						<li><i class="icon-envelope-letter icons"></i> <strong>Email:</strong> Contact@erentheme.com</li>
-						<li><i class="icon-call-in icons"></i> <strong>Phone Number:</strong> (800) 123 456 789</li>
-					</ul>
-				</div>
-				<!-- /f-weghit -->
-			</div>
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<!-- f-weghit2 -->
-				<div class="f-weghit2">
-					<h4>INFORMATION</h4>
-					<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Contact Us</a></li>
-						<li><a href="#">All Collection</a></li>
-						<li><a href="#">Privacy policy</a></li>
-						<li><a href="#">Terms & conditio</a></li>
-					</ul>
-				</div>
-				<!-- /f-weghit2 -->
-				<!-- f-weghit2 -->
-				<div class="f-weghit2">
-					<h4>CATEGORIES</h4>
-					<ul>
-						<li><a href="#">Fashion</a></li>
-						<li><a href="#">Electronics</a></li>
-						<li><a href="#">Furnitured & Decor</a></li>
-						<li><a href="#">Jewelry & Watches</a></li>
-						<li><a href="#">Health & Beauty</a></li>
-					</ul>
-				</div>
-				<!-- /f-weghit2 -->
-			</div>
-			<div class="col-xs-12 col-sm-4 col-md-4">
-				<!-- f-weghit -->
-				<div class="f-weghit">
-					<h4>On-Sale Products</h4>
-					<!-- e-product -->
-					<div class="e-product">
-						<div class="pro-img">
-							<img src="/jiuyexiangmu/home/assets/images/on-seal-img1.jpg" alt="2">
-						</div>
-						<div class="pro-text-outer">
-							<span>Macbook, Laptop</span>
-							<a href="#">
-								<h4> Apple Macbook Retina 23’ </h4>
-							</a>
-							<p class="wk-price">$290.00 </p>
-						</div>
-					</div>
-					<!-- e-product -->
-					<!-- e-product -->
-					<div class="e-product">
-						<div class="pro-img">
-							<img src="/jiuyexiangmu/home/assets/images/on-seal-img2.jpg" alt="2">
-						</div>
-						<div class="pro-text-outer">
-							<span>Macbook, Laptop</span>
-							<a href="#">
-								<h4> Apple Macbook Retina 23’ </h4>
-							</a>
-							<p class="wk-price">$290.00 </p>
-						</div>
-					</div>
-					<!-- e-product -->
-				</div>
-				<!-- /f-weghit -->
-			</div>
-			<!-- copayright -->
-			<div class="copayright">
-				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-md-6">
-						Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://www.17sucai.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
-					</div>
-					<div class="text-right col-xs-12 col-sm-6 col-md-6">
-						<img src="/jiuyexiangmu/home/assets/images/payment-img.jpg" alt="payment-img" />
-					</div>
-				</div>
-			</div>
-			<!-- /copayright -->
-
-		</div>
-	</div>
-</footer>
+@include('/home.laouts.foot')
 
 <!-- sticky-socia -->
 <aside id="sticky-social">
@@ -6136,17 +5883,7 @@
 <p id="back-top">
 	<a href="#top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 </p>
-<script src="/jiuyexiangmu/home/assets/js/jquery.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="/jiuyexiangmu/home/assets/js/bootstrap.min.js"></script>
-<script src="/jiuyexiangmu/home/assets/js/bootstrap-dropdownhover.min.js"></script>
-<!-- Plugin JavaScript -->
-<script src="/jiuyexiangmu/home/assets/js/jquery.easing.min.js"></script>
-<script src="/jiuyexiangmu/home/assets/js/wow.min.js"></script>
-<!-- owl carousel -->
-<script src="/jiuyexiangmu/home/assets/owl-carousel/owl.carousel.js"></script>
-<!--  Custom Theme JavaScript  -->
-<script src="/jiuyexiangmu/home/assets/js/custom.js"></script>
+@include('/home.laouts.js')
 </body>
 
 </html>

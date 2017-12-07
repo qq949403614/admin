@@ -15,6 +15,17 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+
+Route::get('/list','ListController@list');
+Route::get('/detail','DetailController@detail');
+Route::get('/contact','ContactController@contact');
+Route::get('/cart','CartController@cart');
+Route::get('/checkout','CheckoutController@checkout');
+
+Route::get('admin','AdminController@index');
+Route::resource('user','UserController');
+Route::resource('article','ArticleController');
+Route::resource('cate','CateController');
 Route::get('home','HomeController@index');
 Route::get('registers','HomeController@registers');
 Route::post('registers','HomeController@registers');
