@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="revised" content="Ningxia Seasons, 2015/8/13/" />
+<!-- 定义页面的最新版本 -->
+<meta name="description" content="网站简介" />
+<!-- 网站简介 -->
+<meta name="keywords" content="搜索关键字，以半角英文逗号隔开" />
+<!-- 搜索关键字 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>某经融公司股权众筹站点</title>
+
+<!-- Bootstrap -->
+<link href="/csse/crowdfunding.center/my_info.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- 开始 -->
+<div class="my_info_title">我的资料</div>
+<div class="my_info_title_3">
+  <ul>
+    <li id="listClick_1" onClick="listClick(1)" style="border-bottom: 1px solid #C40521; color: #C40521;">基本资料</li>
+    <li id="listClick_4" onClick="listClick(4)">修改密码</li>
+  </ul>
+</div>
+<div class="my_info_content">
+  <div class="my_info_content_care"> 以下信息都为必填项，请您认真填写! </div>
+  <table class="my_info_content_care_table">
+    <tbody>
+      <tr>
+        <td width="90" align="right" class="color555">用户名：</td>
+        <td class="color555">不科学<span class="colorCA1E37 margin_left10 font_size12">不能修改</span></td>
+      </tr>
+      <tr>
+        <td align="right" class="color555">手机号码：</td>
+        <td class="color555">18609515574<span class="color959595 margin_left10 font_size12">友好提示：请填写您注册时的手机号码!</span></td>
+      </tr>
+      <tr>
+        <td align="right" class="color555">真实姓名：</td>
+        <td class="color555"><input class="my_info_content_care_table_text" name="" type="text">
+          <span class="color959595 margin_left10 font_size12">友好提示：请输入您的真实姓名!</span></td>
+      </tr>
+      <tr>
+        <td align="right" class="color555">性别：</td>
+        <td class="color555"><label>
+            <input type="radio" name="sex" id="" value="未知" checked>
+            未知 </label>
+          <label>
+            <input type="radio" name="sex" id="" value="男士">
+            男士 </label>
+          <label class="radio-inline">
+            <input type="radio" name="sex" id="" value="女士">
+            女士 </label><span class="color959595 margin_left10 font_size12">友好提示：请输入您的性别!</span>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" class="color555">邮箱：</td>
+        <td class="color555"><input class="my_info_content_care_table_text" name="" type="text">
+          <span class="color959595 margin_left10 font_size12">友好提示：请填写常用邮箱，您忘记密码时可用邮箱找回，有新项目动态时会发邮件给您</span></td>
+      </tr>
+      <tr>
+        <td align="right" class="color555">所在城市：</td>
+        <td class="color555"><div id="my_city">
+            <select class="prov">
+               
+            </select>
+            <select class="city">
+                
+            </select>
+            <select class="dist">
+                
+            </select>
+            <span class="color959595 margin_left10 font_size12">友好提示：请选择您的地区,方便我们为您服务!</span> </div></td>
+      </tr>
+      <tr>
+        <td align="right" class="color555">通讯地址：</td>
+        <td class="color555"><input class="my_info_content_care_table_text" name="" type="text">
+            <span class="color959595 margin_left10 font_size12">请您如实填写</span></td>
+      </tr>
+      <tr>
+        <td align="right" class="color555">&nbsp;</td>
+        <td class="color555"><span class="color959595 margin_left10 font_size12">友好提示：方便您能更快的接受快递!</span></td>
+      </tr>
+      <tr>
+        <td align="right" class="color555">代收人姓名：</td>
+        <td class="color555"><input class="my_info_content_care_table_text" name="" type="text">
+            <span class="color959595 margin_left10 font_size12">请您如实填写</span></td>
+      </tr>
+      <tr>
+        <td align="right" class="color555">代收人电话：</td>
+        <td class="color555"><input class="my_info_content_care_table_text" name="" type="text">
+            <span class="color959595 margin_left10 font_size12">请您如实填写</span></td>
+      </tr>
+      
+      <tr>
+        <td align="center" class="color555" colspan="2"><input class="my_info_content_care_table_submit" name="" type="submit" value="保    存"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 结束 --> 
+<script src="/jss/jquery-2.1.1.min.js"></script>  
+<script src="/jss/my_info.js"></script>
+<script src="/jss/jquery.cityselect.js"></script> 
+<script>
+// JavaScript Document
+$(document).ready(function(){
+	$("#my_city").citySelect({
+		prov:"北京",
+		nodata:"none"
+	});
+});
+</script>
+</body>
+</html>

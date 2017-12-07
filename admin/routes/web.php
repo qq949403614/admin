@@ -23,9 +23,12 @@ Route::get('/confirm/{id}','HomeController@confirm');
 
 Route::get('/list','ListController@list');
 
+Route::get('/center','CenterController@center');
+
 
 
 Route::get('admin','AdminController@index');
 Route::resource('user','UserController');
 Route::resource('article','ArticleController');
 Route::resource('cate','CateController');
+

@@ -84,22 +84,17 @@
 						<li><i class="icon-note icons" aria-hidden="true"></i><a href="#" style="color:#fff;">My orders</a></li>
 						<li>
 							<div class="dropdown">
-								<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+								<a href="/center" class="btn btn-default dropdown-toggle">
 									<i aria-hidden="true"></i> Personal center
 								</a>
-								<ul class="dropdown-menu">
-									<li><a href="#">My Account</a></li>
-									<li><a href="#">Change Password</a></li>
-									<li><a href="#">Change Address</a></li>
-								</ul>
 							</div>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		<!--  /top-header  -->
-	</div>
+	</div>	
+	<!--  /top-header  -->
 	<section class="top-md-menu">
 		<div class="container">
 			<div class="col-sm-3">
