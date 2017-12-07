@@ -1,5 +1,5 @@
 <!-- Bootstrap CSS -->    
-<link href="/bootstrap_admin/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
 <!-- bootstrap theme -->
 <link href="/css/bootstrap-theme.css" rel="stylesheet">
 <!--external css-->

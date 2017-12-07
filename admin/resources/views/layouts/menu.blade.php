@@ -25,7 +25,7 @@
             </li>       
             <li class="sub-menu">
               <a href="javascript:;" class="">
-                  <span>分类管理</span>
+                  <span>导航管理</span>
                   <span class="menu-arrow arrow_carrot-right"></span>
               </a>
               <ul class="sub">

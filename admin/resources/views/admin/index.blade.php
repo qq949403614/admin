@@ -75,7 +75,7 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-12">
-                    <img src="holder.js/800x200?text=这是张图片" alt="这是张图片">
+                    
                   </div>
                 </div>                              
             </header> 
