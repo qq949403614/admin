@@ -62,8 +62,8 @@ class UserController extends Controller
             // 获取文件的路径
             $data['profile'] = trim($dir.'/'.$name,'.');
         }
-        $data['status'] = 0;
-        if(DB::table('admin')->where('id',$id)->update($data)){
+        $data['status'] = 1;
+        if(DB::table('admin')->insert($data)){
             return redirect('/user')->with('msg','恭喜您,添加成功!!!');
         }else{
             return back()->with('msg','对不起亲,添加未成功!!!');
