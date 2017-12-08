@@ -7,6 +7,9 @@ use Closure;
 class AdminMiddleware
 {
     /**
+     * 用户管理中间件
+     */
+    /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request

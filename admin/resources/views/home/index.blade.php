@@ -31,17 +31,17 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations=" fadeInLeft fadeInUp fadeInRight">
 						<ul class="nav navbar-nav">
 							<li class="all-departments dropdown">
-								<a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span> Shop By Department</span> <i class="fa fa-bars" aria-hidden="true"></i> </a>
+								<a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span> Shop By Department</span></a>
 								<ul class="dropdown-menu dropdownhover-bottom all-open" role="menu">
 									<li class="dropdown">
-										<a href="index.html"><img src="/jiuyexiangmu/home/assets/images/menu-icon1.png" alt="menu-icon1" /> Electronic & Digital <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<a href="index.html"><img src="/jiuyexiangmu/home/assets/images/menu-icon1.png" alt="menu-icon1" /> Electronic & Digital </a>
 										<ul class="dropdown-menu right">
 											<li><a href="grid.html">Electronic 01</a></li>
 											<li><a href="list.html">Electronic 02</a></li>
 										</ul>
 									</li>
 									<li class="dropdown">
-										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon2.png" alt="menu-icon2" /> Phones & Accessories <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon2.png" alt="menu-icon2" /> Phones & Accessories</a>
 										<ul class="dropdown-menu right">
 											<li><a href="grid.html">Iphone 05</a></li>
 											<li><a href="list.html">Iphone 06</a></li>
@@ -54,7 +54,7 @@
 										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon3.png" alt="menu-icon3" /> PHome & Kitchen <sup class="bg-red">hot!</sup></a>
 									</li>
 									<li class="dropdown">
-										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon4.png" alt="menu-icon4" /> Fashion & Clothing <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon4.png" alt="menu-icon4" /> Fashion & Clothing</a>
 										<div class="dropdown-menu dropdownhover-bottom mega-menu" role="menu">
 
 									<div class="col-sm-8 col-md-8">
@@ -95,7 +95,7 @@
 								</div>
 									</li>
 									<li class="dropdown">
-										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon5.png" alt="menu-icon2" /> Sport & Outdoors <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon5.png" alt="menu-icon2" /> Sport & Outdoors </a>
 										<ul class="dropdown-menu right">
 											<li><a href="grid.html">Sport 05</a></li>
 											<li><a href="list.html">Sport 06</a></li>
@@ -104,7 +104,7 @@
 										</ul>
 									</li>
 									<li class="dropdown">
-										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon6.png" alt="menu-icon2" /> Jewelry & Watches <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon6.png" alt="menu-icon2" /> Jewelry & Watches </a>
 										<ul class="dropdown-menu right">
 											<li><a href="grid.html">Jewelry 05</a></li>
 											<li><a href="grid.html">Watches 07</a></li>
@@ -115,7 +115,7 @@
 										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon7.png" alt="menu-icon2" /> Health & Beauty <sup class="bg-blue">NEW</sup></a>
 									</li>
 									<li class="dropdown">
-										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon8.png" alt="menu-icon2" /> Toys & Hobbies <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon8.png" alt="menu-icon2" /> Toys & Hobbies </a>
 										<ul class="dropdown-menu right">
 											<li><a href="grid.html">Toys 05</a></li>
 											<li><a href="list.html">Hobbies 02</a></li>
@@ -123,7 +123,7 @@
 										</ul>
 									</li>
 									<li class="dropdown">
-										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon9.png" alt="menu-icon2" /> Book & Office <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+										<a href="#"><img src="/jiuyexiangmu/home/assets/images/menu-icon9.png" alt="menu-icon2" /> Book & Office </a>
 										<ul class="dropdown-menu right">
 											<li><a href="grid.html">Book 05</a></li>
 											<li><a href="list.html">Book 06</a></li>
@@ -1230,7 +1230,7 @@
 													<div class="pro-img">
 														<img src="/jiuyexiangmu/home/assets/images/elec-img1.jpg" alt="2">
 														<div class="hover-icon">
-															<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+															<a href="#"></a>
 														</div>
 													</div>
 													<div class="pro-text-outer">
@@ -1240,8 +1240,8 @@
 														</a>
 														<p class="wk-price">$290.00 </p>
 														<a href="#" class="add-btn">Add to cart</a>
-														<a href="#" class="add-btn2"><i class="icon-heart icons" aria-hidden="true"></i></a>
-														<a href="#" class="add-btn2"><i class="icon-refresh icons"></i></a>
+														<a href="#" class="add-btn2"></a>
+														<a href="#" class="add-btn2"></a>
 													</div>
 												</div>
 												<!-- /e-product -->
@@ -1253,7 +1253,7 @@
 														<sup class="sale-tag">sale!</sup>
 														<img src="/jiuyexiangmu/home/assets/images/elec-img2.jpg" alt="2">
 														<div class="hover-icon">
-															<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+															<a href="#"</a>
 														</div>
 													</div>
 													<div class="pro-text-outer">
@@ -1274,7 +1274,7 @@
 														<sup class="sale-tag">sale!</sup>
 														<img src="/jiuyexiangmu/home/assets/images/elec-img3.jpg" alt="2">
 														<div class="hover-icon">
-															<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+															<a href="#"></a>
 														</div>
 													</div>
 													<div class="pro-text-outer">
@@ -1295,7 +1295,7 @@
 														<sup class="new-tag">NEW</sup>
 														<img src="/jiuyexiangmu/home/assets/images/elec-img4.jpg" alt="2">
 														<div class="hover-icon">
-															<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+															<a href="#"></a>
 														</div>
 													</div>
 													<div class="pro-text-outer">
@@ -1318,7 +1318,7 @@
 														<sup class="sale-tag">sale!</sup>
 														<img src="/jiuyexiangmu/home/assets/images/elec-img1.jpg" alt="2">
 														<div class="hover-icon">
-															<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+															<a href="#"></a>
 														</div>
 													</div>
 													<div class="pro-text-outer">
@@ -4802,7 +4802,7 @@
 												<!-- e-product -->
 												<div class="e-product">
 													<div class="pro-img">
-														<img src="/jiuyexiangmu/home/assets/images/ghm-img2.jpg" alt="2">
+														<img src="/jiuyexiangmu/home/assets/images/" alt="2">
 														<div class="hover-icon">
 															<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
 														</div>

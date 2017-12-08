@@ -35,25 +35,21 @@
             </li>
             <li class="sub-menu">
               <a href="javascript:;" class="">
-                  <i class="icon_table"></i>
-                  <span>Tables</span>
+                  <span>商品管理</span>
                   <span class="menu-arrow arrow_carrot-right"></span>
               </a>
               <ul class="sub">
-                  <li><a class="" href="basic_table.html">Basic Table</a></li>
+                  <li><a class="" href="/shop/create">添加商品</a></li>
+                  <li><a class="" href="/shop">商品列表</a></li>
               </ul>
             </li>
             <li class="sub-menu">
               <a href="javascript:;" class="">
-                  <i class="icon_documents_alt"></i>
-                  <span>Pages</span>
+                  <span>留言管理</span>
                   <span class="menu-arrow arrow_carrot-right"></span>
               </a>
               <ul class="sub">                          
-                  <li><a class="" href="profile.html">Profile</a></li>
-                  <li><a class="" href="login.html"><span>Login Page</span></a></li>
-                  <li><a class="" href="blank.html">Blank Page</a></li>
-                  <li><a class="" href="404.html">404 Error</a></li>
+                  <li><a class="" href="">留言列表</a></li>
               </ul>
             </li>
         </ul>

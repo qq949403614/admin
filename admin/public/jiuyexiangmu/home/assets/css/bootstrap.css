@@ -2700,9 +2700,6 @@ input[type="button"].btn-block {
 .glyphicon-exclamation-sign:before {
   content: "\e101";
 }
-.glyphicon-gift:before {
-  content: "\e102";
-}
 .glyphicon-leaf:before {
   content: "\e103";
 }

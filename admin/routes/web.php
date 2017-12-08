@@ -15,17 +15,12 @@ Route::get('/', function () {
     return view('home.index');
 });
 
-
+//前台路由规则
 Route::get('/list','ListController@list');
 Route::get('/detail','DetailController@detail');
-Route::get('/contact','ContactController@contact');
+
 Route::get('/cart','CartController@cart');
 Route::get('/checkout','CheckoutController@checkout');
-
-Route::get('admin','AdminController@index');
-Route::resource('user','UserController');
-Route::resource('article','ArticleController');
-Route::resource('cate','CateController');
 Route::get('home','HomeController@index');
 Route::get('registers','HomeController@registers');
 Route::post('registers','HomeController@registers');
@@ -33,14 +28,18 @@ Route::get('register','HomeController@doregister');
 Route::get('message','CommonController@message');
 Route::get('confirm/{id}','HomeController@confirm');
 Route::get('list','ListController@list');
-
+//留言管理
+Route::get('contact','contactController@index');
+route::post('contact/edit','ContactController@edit');
 //后台路由规则
 route::get('admin/login','LoginController@login');
 route::post('admin/login','LoginController@dologin');
-
+//后台登录路由组
 route::group(['middleware'=>'admin'],function(){
 	Route::get('admin','AdminController@index');
 	Route::resource('user','UserController');
 	Route::resource('article','ArticleController');
 	Route::resource('cate','CateController');
+	Route::resource('shop','ShopController');
+	Route::resource('comment','CommentController');
 });
