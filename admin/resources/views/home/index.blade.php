@@ -275,7 +275,7 @@
 							<li><a href="/list">List</a></li>
 							<li><a href="/grid">Grid</a></li>
 							<li><a href="/detail">Shop-detail</a></li>
-							<li><a href="/contact">Contact</a></li>
+							<li><a href="/home/contact">Contact</a></li>
 							<li><a href="/cart">Shopping-cart</a></li>
 							<li><a href="/checkout">Checkout</a></li>
 						</ul>
@@ -5999,8 +5999,7 @@
 
 <div style="border-top:4px solide red; height:1px;"></div>
 <!-- /newsletter -->
-@include('/home.laouts.foot')
-
+@include('home.laouts.foot')
 <!-- sticky-socia -->
 <aside id="sticky-social">
 	<ul>
@@ -6017,5 +6016,4 @@
 </p>
 @include('/home.laouts.js')
 </body>
-
 </html>

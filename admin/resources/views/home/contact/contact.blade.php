@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +30,7 @@
 <body>
 	<!--  Preloader  -->
 	<div id="preloader">
-		<div id="loading"> </div>
+		<div id="loading"></div>
 	</div>
 	<header class="header2">
 		<!--  top-header  -->
@@ -159,7 +158,7 @@
 						<li><a href="/list">List</a></li>
 						<li><a href="/grid">Grid</a></li>
 						<li><a href="/detail">Shop-detail</a></li>
-						<li><a href="/contact">Contact</a></li>
+						<li><a href="/home/contact">Contact</a></li>
 						<li><a href="/cart">Shopping-cart</a></li>
 						<li><a href="/checkout">Checkout</a></li>
 					</ul>
@@ -171,53 +170,58 @@
 	</header>
 	<section class="shopping-cart">
         <div class="container">
+
 			<div class="row">
 				<div class="col-md-12">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item active">Library</li>
+						<li>当前位置</li>
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+						<li class="breadcrumb-item active">contact</li>
 					</ol>
 				</div>
-				<div class="col-md-6 contact-info">
+				
+				<div class="col-md-12 contact-info pull-left">
                     <div class="contact-form">
                         <form action="/contact/edit" method="post" id="commentform" class="comment-form">
 							<div class="row">
-								<div class="col-md-12">
+								<div class="col-md-12 text-center">
+								@if(session('msg'))
+		        				<div style="color:red;background:#ff0">{{session('msg')}}</div>
+		        				@endif
 								 	<div class="contact-bg">                 
-										<h2>Contact Us</h2>
-										<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+										<h2>Review area</h2>
+										<p>Please put forward your valuable advice and we will carefully record and correct it.</p>
 							     	</div> 
 								</div>
 							</div>
 							<div class="col-md-6">
+							
                                 <div class="lable">Name <span>*</span></div>
-                              		<p class="comment-form-author"><input id="author" name="username" value="" size="30" type="text"></p>
-                            	</div>
-                            	<div class="col-md-6">
-                              <div class="lable">Email <span>*</span></div>
-                              <p class="comment-form-email"><input id="email" name="email" value="" size="30" type="text"></p>
-                            	</div>
-                            	<div class="col-md-12">
-                              <div class="lable">Comments <span>*</span></div>
-                              <script id="editor" name="content" type="text/plain" style="width:600px;"></script>
-                            	</div>
-                            	<div class="col-md-12">
-
-                              <p class="form-submit">{{csrf_field()}}<input name="submit" id="submit" class="btn btn-secondary" value="send messages" type="submit">  </p> 
-                            	</div>                      
-							</div>                              
+                              	<p class="comment-form-author"><input id="author" name="username" value="" size="30" type="text"></p>
+                            </div>
+                            
+                            <div class="col-md-6">
+                              	<div class="lable">Email <span>*</span></div>
+                              	<p class="comment-form-email"><input id="email" name="email" value="" size="30" type="text"></p>
+                            </div>
+                            <div class="col-md-6">
+                            	<div class="lable">Please give your valuable advice<span>*</span></div>
+                            	<p class="comment-form-email"><img src="/image/sakdljfajflkk.jpg" width="65%" alt=""></p>
+                            </div>
+                            <div class="col-md-6">
+                              	<div class="lable">An opinion or suggestion<span>*</span></div>
+                              	<script id="editor" name="content" type="text/plain" style="width:550px;"></script>
+                            </div>
+                            <div class="col-md-8 col-md-offset-4">
+                              	<p class="form-submit">
+                              	{{csrf_field()}}
+                              	<input name="submit" id="submit" class="btn btn-secondary" value="send messages" type="submit">  </p> 
+                            </div>
                         </form>
                     </div>
                 </div>
-				<div class="col-md-6 contact-info">
-						<div class="col-md-12">
-                     		<div class="contact-bg">                 
-                        		<h2>Contact Us</h2>
-								<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
-                        	</div>
-                    	</div>
-                </div>
 			</div>
+
         </div>
     </section>
 	<!-- newsletter -->
@@ -237,7 +241,6 @@
 			</div>
 		</div>
 	</section>
-	<!-- /newsletter -->
 	@include('/home.laouts.foot')
 	<!-- sticky-socia -->
 	<aside id="sticky-social">
@@ -252,10 +255,11 @@
 	<script>
 		var ue = UE.getEditor('editor',{
 			toolbars: [
-    			['fullscreen', 'source', 'undo', 'redo', 'bold']
-]
+    			['source', 'undo', 'redo', 'bold']
+			]
 		});
 	</script>
+</body>
 	<!-- /sticky-socia -->
 	<script src="/jiuyexiangmu/home/assets/js/jquery.js"></script>
 	<!-- Bootstrap Core JavaScript -->
@@ -269,6 +273,4 @@
 	<!--  Custom Theme JavaScript  -->
 	<script src="/jiuyexiangmu/home/assets/js/filter-price.js"></script>
 	<script src="/jiuyexiangmu/home/assets/js/custom.js"></script>
-</body>
-
 </html>

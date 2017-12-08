@@ -30,8 +30,10 @@ Route::get('message','CommonController@message');
 Route::get('confirm/{id}','HomeController@confirm');
 
 //留言管理
-Route::get('contact','contactController@index');
+Route::get('home/contact','ContactController@index');
 route::post('contact/edit','ContactController@edit');
+route::get('admin/comment','ContactController@comment');
+route::post('/destroy/{id}','ContactController@destroy');
 
 //后台路由规则
 route::get('admin/login','LoginController@login');
