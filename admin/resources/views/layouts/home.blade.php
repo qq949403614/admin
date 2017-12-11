@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Register</title>
@@ -30,18 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!-- Custom Theme files -->
 <link href="/jiuyexiangmu/home/assets/css/style-1.css" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<!--webfont-->
-<link href='http://fonts.useso.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="/jiuyexiangmu/home/assets/js/jquery-1.11.1.min.js"></script>
-<!-- dropdown -->
-<script src="/jiuyexiangmu/home/js/jquery.easydropdown.js"></script>
-<!-- start menu -->
 <link href="/jiuyexiangmu/home/assets/css/megamenu-1.css" rel="stylesheet" type="text/css" media="all" />
-
-<script type="text/javascript" src="/jiuyexiangmu/home/assets/js/megamenu.js"></script>
-<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-
 <div class="top-header">
 		<div class="container">
 
@@ -108,36 +97,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="men">
 	<div class="container">
 	    <div class="col-md-12 register">
-		  	 <form>
-				     <div class="form-group">
-				       <label>Username</label>
-				       <input type="text" class="form-control" name="username" />
-				     </div>
-				     <div class="form-group">
-				       <label>phone</label>
-				       <input type="text" class="form-control" name="phone" />
-				     </div>
-					<button type="button" id="send" class="btn btn-default btn-sm">发送验证码</button>
-						<div class="form-group">
-				       <label>phoneverify</label>
-				       <input type="text" class="form-control" name="verify" />
-				     </div>				
-					
-				     <div class="form-group">
-				       <label>password</label>
-				       <input type="password" class="form-control" name="password" />
-				     </div>
-				     <div class="form-group">
-				       <label>Email address</label>
-				       <input type="text" class="form-control" name="email" />
-				     </div>
-				     <div class="form-group">
-				       <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-				     </div>
-  			</form>
+		  	<form>
+			     <div class="form-group">
+			       <label>Username</label>
+			       <input type="text" class="form-control" name="username" />
+			     </div>
+			     <div class="form-group">
+			       <label>phone</label>
+			       <input type="text" class="form-control" name="phone" />
+			     </div>
+				<button type="button" id="send" class="btn btn-default btn-sm">发送验证码</button>
+					<div class="form-group">
+			       <label>phoneverify</label>
+			       <input type="text" class="form-control" name="verify" />
+			     </div>				
 				
-				</div>
-		   </div>
+			     <div class="form-group">
+			       <label>password</label>
+			       <input type="password" class="form-control" name="password" />
+			     </div>
+			     <div class="form-group">
+			       <label>Email address</label>
+			       <input type="text" class="form-control" name="email" />
+			     </div>
+			     <div class="form-group">
+			       <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+			     </div>
+			</form>
+		</div>
+	  </div>
 	 </div>
 </div>
 
@@ -259,6 +247,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--  Custom Theme JavaScript  -->
 <script src="/jiuyexiangmu/home/assets/js/custom.js"></script>
 @section('js')
+
 @show
 </footer>
 </body>

@@ -37,25 +37,25 @@
                             <ul class="dropdown-menu extended logout">
                                 <div class="log-arrow-up"></div>
                                 <li class="eborder-top">
-                                    <a href="#"><i class="icon_profile"></i> My Profile</a>
+                                    <a href="#">My Profile</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
+                                    <a href="#"> My Inbox</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
+                                    <a href="#"> Timeline</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="icon_chat_alt"></i> Chats</a>
+                                    <a href="#"> Chats</a>
                                 </li>
                                 <li>
-                                    <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+                                    <a href="login.html"> Log Out</a>
                                 </li>
                                 <li>
-                                    <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+                                    <a href="documentation.html">Documentation</a>
                                 </li>
                                 <li>
-                                    <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+                                    <a href="documentation.html">Documentation</a>
                                 </li>
                             </ul>
                         </li>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-12">
-                    <img src="holder.js/800x200?text=这是张图片" alt="这是张图片">
+                     <img src="/image/sakdljfajflkk.jpg" width="100px" alt="">
                   </div>
                 </div>                              
             </header> 

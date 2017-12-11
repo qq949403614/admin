@@ -7,8 +7,9 @@ use DB;
 
 class CateController extends Controller
 {
+    
     /**
-     * Display a listing of the resource.
+     * 导航管理后台
      *
      * @return \Illuminate\Http\Response
      */

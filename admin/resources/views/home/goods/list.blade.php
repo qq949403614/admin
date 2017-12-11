@@ -139,7 +139,7 @@
 								<li><a href="/list">List</a></li>
 								<li><a href="/grid">Grid</a></li>
 								<li><a href="/detail">Shop-detail</a></li>
-								<li><a href="/contact">Contact</a></li>
+								<li><a href="/home/contact">Contact</a></li>
 								<li><a href="/cart">Shopping-cart</a></li>
 								<li><a href="/checkout">Checkout</a></li>
 							</ul>

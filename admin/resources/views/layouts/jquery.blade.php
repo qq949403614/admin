@@ -9,14 +9,3 @@
 <script src="/js/scripts.js"></script>
 @section('js')
 @show
-<script>
-    //carousel
-    $(document).ready(function() {
-        $("#owl-slider").owlCarousel({
-          navigation : true,
-          slideSpeed : 300,
-          paginationSpeed : 400,
-          singleItem : true
-        });
-    });
-</script>

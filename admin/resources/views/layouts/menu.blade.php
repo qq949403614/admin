@@ -25,7 +25,7 @@
             </li>       
             <li class="sub-menu">
               <a href="javascript:;" class="">
-                  <span>分类管理</span>
+                  <span>导航管理</span>
                   <span class="menu-arrow arrow_carrot-right"></span>
               </a>
               <ul class="sub">
@@ -39,21 +39,22 @@
                   <span class="menu-arrow arrow_carrot-right"></span>
               </a>
               <ul class="sub">
+<<<<<<< HEAD
                   <li><a class="" href="/goods/create">添加商品</a></li>
                   <li><a class="" href="/cate">商品列表</a></li>
+=======
+                  <li><a class="" href="/shop/create">添加商品</a></li>
+                  <li><a class="" href="/shop">商品列表</a></li>
+>>>>>>> 545b8ee30c40af1a27ca96d67822ea200083f247
               </ul>
             </li>
             <li class="sub-menu">
               <a href="javascript:;" class="">
-                  <i class="icon_documents_alt"></i>
-                  <span>Pages</span>
+                  <span>留言管理</span>
                   <span class="menu-arrow arrow_carrot-right"></span>
               </a>
               <ul class="sub">                          
-                  <li><a class="" href="profile.html">Profile</a></li>
-                  <li><a class="" href="login.html"><span>Login Page</span></a></li>
-                  <li><a class="" href="blank.html">Blank Page</a></li>
-                  <li><a class="" href="404.html">404 Error</a></li>
+                  <li><a class="" href="/admin/comment">留言列表</a></li>
               </ul>
             </li>
         </ul>

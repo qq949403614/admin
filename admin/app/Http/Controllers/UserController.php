@@ -8,10 +8,9 @@ use Hash;
 
 class UserController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * 网站后台用户管理界面
      */
     public function index(Request $request)
     {

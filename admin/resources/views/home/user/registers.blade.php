@@ -50,7 +50,6 @@
 				alert('手机号格式错误')
 				return;
 			}
-
 			$.ajax({
 				type:'get',
 				data:{phone:phone},

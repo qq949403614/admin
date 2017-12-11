@@ -7,6 +7,11 @@ use DB;
 
 class ArticleController extends Controller
 {
+
+    /**
+     * 文章管理后台
+     */
+
     /**
      * Display a listing of the resource.
      *

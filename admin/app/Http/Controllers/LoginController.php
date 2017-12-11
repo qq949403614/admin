@@ -8,7 +8,9 @@ use Hash;
 
 class LoginController extends Controller
 {
-    //登录网站后台
+    /**
+     * /网站后台登录页
+     */
     public function login()
     {
     	return view('admin.login'); 	
