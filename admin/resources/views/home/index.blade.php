@@ -14,7 +14,7 @@
 	</div>
 </div>
 <header>
-<<<<<<< HEAD
+
 	<!--  top-header  -->
 	<div class="top-header">
 		<div class="container">
@@ -148,9 +148,6 @@
 				</div>
 				<!-- cart-menu End -->
 			</div>
-=======
-			@include('/home.laouts.head')
->>>>>>> 904b2e46a5c7fc425de10cbc51520efa9b4810d4
 			<div class="main-menu">
 				<!--  nav  -->
 				<nav class="navbar navbar-inverse navbar-default">

@@ -180,117 +180,120 @@
 	 <section class="shopping-cart">
             <!-- .shopping-cart -->
             <div class="container">
+
 				<div class="row">
-				<div class="col-md-12">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="/">Home</a></li>
-						<li class="breadcrumb-item active">Library</li>
-					</ol>
+					<div class="col-md-12">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Home</a></li>
+							<li class="breadcrumb-item active">cart</li>
+						</ol>
+					</div>
+					
+					<div class="col-md-12">
+				
+	                  <h2>You cart items</h2>
+	                  <form method="post" action="/dingdan/confirm">
+	                  <table>
+	                     <tr>
+	                        <th>&nbsp;</th>
+	                        <th>Product pic</th>
+	                        <th>Product name</th>
+	                        <th>Description</th>
+	                        <th>Price</th>
+	                        <th>Quantity</th>
+	                        <th>Total Price</th>
+	                        <th></th>
+	                     </tr>
+	                     @foreach($goods as $k=>$v)
+	                     <tr>
+	                        <th scope="row">
+	                            <input type="checkbox" name="data[{{$v->id}}][id]" value="{{$v->id}}">
+	                        </th>
+	                        <td><img width="50" height="50" src="{{$v->pic}}" alt="13"></td>
+	                        <td>{{$v->detail->title}}</td>
+	                        <td>Lorem Ipsum is simply dummy text of the printing<br/> and typesetting industry.</td>
+	                        <td><strong>${{$v->detail->price}}</strong></td>
+	                        <td><input type="text" name="data[{{$v->id}}][num]" min="1" max="500" value="{{$v->num}}"></td>
+	                        <td><strong>$160.00</strong></td>
+	                        <td><span class="red" ><i class="fa fa-times del" cid="{{$v->id}}" aria-hidden="true"></i></span></td>
+	                     </tr>
+	                     @endforeach
+	                  </table>
+
+                      </form>
+	                  <div class="col-sm-6 col-md-6">
+	                     <a href="#" class="button red">CONTINUE SHOPPING</a>
+	                  </div>
+	                  <div class="col-sm-6 col-md-6 text-right">
+	                     <a href="#" class="button">UPDATE SHOPPING CART</a>
+	                     <a href="#" class="button">CLEAR SHOPPING CART</a>
+	                  </div>
+	                  <div class="col-sm-4 col-md-4">
+	                     <div class="shipping-outer">
+	                        <h2>Calculate shipping</h2>
+	                        <div class="row">
+	                           <div class="col-md-12 counttry">
+	                              <div class="lable">Select your Counttry:</div>
+	                              <input name="counttry" placeholder="United States (USA)" type="text">
+	                           </div>
+	                           <div class="col-sm-6 col-md-6">
+	                              <div class="lable">Select your State:</div>
+	                              <div class="size State">
+	                                 <div class="select-option">
+	                                    <select>
+	                                       <option value="28">28</option>
+	                                       <option value="32">32</option>
+	                                       <option value="34">34</option>
+	                                       <option value="36">36</option>
+	                                       <option value="Featured Pots">State / City</option>
+	                                    </select>
+	                                 </div>
+	                              </div>
+	                           </div>
+	                           <div class="col-sm-6 col-md-6">
+	                              <div class="lable">Zip Code:</div>
+	                              <input name="counttry" placeholder="Zip Code" type="text">
+	                           </div>
+	                        </div>
+	                        <a href="#" class="button2">Update Shipping</a>
+	                     </div>
+	                  </div>
+	                  <div class="col-sm-4 col-md-4">
+	                     <div class="shipping-outer">
+	                        <h2>Coupon code</h2>
+	                        <div class="row">
+	                           <div class="col-md-12">
+	                              <div class="lable">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+	                              <input name="counttry" type="text">
+	                           </div>
+	                           <div class="col-md-12">
+	                              <div class="lable">Coupon Code:</div>
+	                              <input name="Coupon Code" placeholder="Coupon Code" type="text">
+	                           </div>
+	                        </div>
+	                        <a href="#" class="button2">REdeem code</a>        		
+	                     </div>
+	                  </div>
+	                  <div class="col-sm-4 col-md-4">
+	                     <div class="shipping-outer">
+	                        <h2>Cart totals</h2>
+	                        <ul>
+	                           <li>Cart Subtotal: <strong>$640.00</strong></li>
+	                           <li>Shipping and Handling: <strong>$10.00</strong></li>
+	                           <li>Cart Totals: <strong>$650.00</strong></li>
+	                           <li class="text-center">
+	                              <a href="#" class="redbutton">Proceed to checkout</a>
+	                              <a href="#">Checkout with mutilple adresses</a>
+	                           </li>
+	                        </ul>
+	                     </div>
+	                  </div>
+	                </div>
 				</div>
-				<div class="col-md-12">
-                  <h2>You cart items</h2>
-                  <table>
-                     <tr>
-                        <th></th>
-                        <th>Product name</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total Price</th>
-                        <th></th>
-                     </tr>
-                     <tr>
-                        <td><img src="/jiuyexiangmu/home/assets/images/elec-img4.jpg" alt="13"></td>
-                        <td>Name product #01</td>
-                        <td>Lorem Ipsum is simply dummy text of the printing<br/> and typesetting industry.</td>
-                        <td><strong>$160.00</strong></td>
-                        <td><input type="number" name="quantity" min="1" max="500"></td>
-                        <td><strong>$160.00</strong></td>
-                        <td><span class="red"><i class="fa fa-times" aria-hidden="true"></i></span></td>
-                     </tr>
-                     <tr>
-                        <td><img src="/jiuyexiangmu/home/assets/images/elec-img3.jpg" alt="13"></td>
-                        <td>Name product #02</td>
-                        <td>Lorem Ipsum is simply dummy text of the printing<br/> and typesetting industry.</td>
-                        <td><strong>$180.00</strong></td>
-                        <td><input type="number" name="quantity" min="1" max="500"></td>
-                        <td><strong>$180.00</strong></td>
-                        <td><span><i class="fa fa-times" aria-hidden="true"></i></span></td>
-                     </tr>
-                  </table>
-                  <div class="col-sm-6 col-md-6">
-                     <a href="#" class="button red">CONTINUE SHOPPING</a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 text-right">
-                     <a href="#" class="button">UPDATE SHOPPING CART</a>
-                     <a href="#" class="button">CLEAR SHOPPING CART</a>
-                  </div>
-                  <div class="col-sm-4 col-md-4">
-                     <div class="shipping-outer">
-                        <h2>Calculate shipping</h2>
-                        <div class="row">
-                           <div class="col-md-12 counttry">
-                              <div class="lable">Select your Counttry:</div>
-                              <input name="counttry" placeholder="United States (USA)" type="text">
-                           </div>
-                           <div class="col-sm-6 col-md-6">
-                              <div class="lable">Select your State:</div>
-                              <div class="size State">
-                                 <div class="select-option">
-                                    <select>
-                                       <option value="28">28</option>
-                                       <option value="32">32</option>
-                                       <option value="34">34</option>
-                                       <option value="36">36</option>
-                                       <option value="Featured Pots">State / City</option>
-                                    </select>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-sm-6 col-md-6">
-                              <div class="lable">Zip Code:</div>
-                              <input name="counttry" placeholder="Zip Code" type="text">
-                           </div>
-                        </div>
-                        <a href="#" class="button2">Update Shipping</a>
-                     </div>
-                  </div>
-                  <div class="col-sm-4 col-md-4">
-                     <div class="shipping-outer">
-                        <h2>Coupon code</h2>
-                        <div class="row">
-                           <div class="col-md-12">
-                              <div class="lable">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-                              <input name="counttry" type="text">
-                           </div>
-                           <div class="col-md-12">
-                              <div class="lable">Coupon Code:</div>
-                              <input name="Coupon Code" placeholder="Coupon Code" type="text">
-                           </div>
-                        </div>
-                        <a href="#" class="button2">REdeem code</a>        		
-                     </div>
-                  </div>
-                  <div class="col-sm-4 col-md-4">
-                     <div class="shipping-outer">
-                        <h2>Cart totals</h2>
-                        <ul>
-                           <li>Cart Subtotal: <strong>$640.00</strong></li>
-                           <li>Shipping and Handling: <strong>$10.00</strong></li>
-                           <li>Cart Totals: <strong>$650.00</strong></li>
-                           <li class="text-center">
-                              <a href="#" class="redbutton">Proceed to checkout</a>
-                              <a href="#">Checkout with mutilple adresses</a>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-				</div>
-               
+              
             </div>
             <!-- /.shopping-cart -->
-         </section>
+     </section>
 	<!-- newsletter -->
 	<section class="newsletter">
 		<div class="container">
@@ -337,3 +340,24 @@
 </body>
 
 </html>
+<script>
+    $('.del').click(function(){
+        //获取相关信息
+        var cid = $(this).attr('cid');
+        var tr = $(this).parents('tr');
+        //发送请求
+        $.ajax({
+            type:'get',
+            url: '/cart/delete',
+            data: {'cid':cid},
+            success: function(data){
+                if(data == 1) {
+                    tr.fadeOut(1000);
+                }
+            }
+
+        })
+
+    });
+</script>
+

@@ -178,6 +178,8 @@
 		</section>
 	</header>
 	<!-- newsletter -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 	<section class="grid-shop">
 		<!-- .grid-shop -->
 		<div class="container">
@@ -193,34 +195,28 @@
 							<!-- product gallery -->
 							<div class="connected-carousels">
 								<div class="stage">
-									<div class="carousel carousel-stage">
-										<ul>
-											<li><img class="zoom_01" src="/jiuyexiangmu/home/assets/images/products/fashion/1.njpg" data-zoom-image="/jiuyexiangmu/home/assets/images/products/fashion/1.jpg" alt="qoute-icon" /> </li>
-											<li><img class="zoom_01" src="/jiuyexiangmu/home/assets/images/products/fashion/2.jpg" data-zoom-image="/jiuyexiangmu/home/assets/images/products/fashion/2.jpg" alt="qoute-icon" /></li>
-											<li><img class="zoom_01" src="/jiuyexiangmu/home/assets/images/products/fashion/3.jpg" data-zoom-image="/jiuyexiangmu/home/assets/images/products/fashion/3.jpg" alt="qoute-icon" /></li>
-											<li><img class="zoom_01" src="/jiuyexiangmu/home/assets/images/products/fashion/15.jpg" data-zoom-image="/jiuyexiangmu/home/assets/images/products/fashion/15.jpg" alt="qoute-icon" /> </li>
-											<li><img class="zoom_01" src="/jiuyexiangmu/home/assets/images/products/fashion/8.jpg" data-zoom-image="/jiuyexiangmu/home/assets/images/products/fashion/8.jpg" alt="qoute-icon" /></li>
-											<li><img class="zoom_01" src="/jiuyexiangmu/home/assets/images/products/fashion/12.jpg" data-zoom-image="/jiuyexiangmu/home/assets/images/products/fashion/12.jpg" alt="qoute-icon" /></li>
+									<div class="carousel carousel-stage" data-jcarousel="true">
+										<ul style="left: 0px; top: 0px;">
+											@foreach($goods_pic as $k=>$v)
+											<li><img class="zoom_01" src="{{$v->pic}}" data-zoom-image="assets/images/products/fashion/12.jpg" alt="qoute-icon"></li>
+											@endforeach
 										</ul>
 									</div>
 									<p class="photo-credits">
 										Photos by <a href="http://www.mw-fotografie.de">Marc Wiegelmann</a>
 									</p>
-									<a href="#" class="prev prev-stage"><span>&lsaquo;</span></a>
-									<a href="#" class="next next-stage"><span>&rsaquo;</span></a>
+									<a href="#" class="prev prev-stage inactive" data-jcarouselcontrol="true"><span>‹</span></a>
+									<a href="#" class="next next-stage" data-jcarouselcontrol="true"><span>›</span></a>
 								</div>
 
 								<div class="navigation">
-									<a href="#" class="prev prev-navigation">&lsaquo;</a>
-									<a href="#" class="next next-navigation">&rsaquo;</a>
-									<div class="carousel carousel-navigation">
-										<ul>
-											<li><img src="/jiuyexiangmu/home/assets/images/products/fashion/1.jpg" width="110" height="110" alt=""></li>
-											<li><img src="/jiuyexiangmu/home/assets/images/products/fashion/2.jpg" width="110" height="110" alt=""></li>
-											<li><img src="/jiuyexiangmu/home/assets/images/products/fashion/3.jpg" width="110" height="110" alt=""></li>
-											<li><img src="/jiuyexiangmu/home/assets/images/products/fashion/15.jpg" width="110" height="110" alt=""></li>
-											<li><img src="/jiuyexiangmu/home/assets/images/products/fashion/8.jpg" width="110" height="110" alt=""></li>
-											<li><img src="/jiuyexiangmu/home/assets/images/products/fashion/12.jpg" width="110" height="110" alt=""></li>
+									<a href="#" class="prev prev-navigation" data-jcarouselcontrol="true">‹</a>
+									<a href="#" class="next next-navigation inactive" data-jcarouselcontrol="true">›</a>
+									<div class="carousel carousel-navigation" data-jcarousel="true">
+										<ul style="left: -202px; top: 0px;">
+											@foreach($goods_pic as $k=>$v)
+											<li data-jcarouselcontrol="true" class="active"><img src="{{$v->pic}}" width="110" height="110" alt=""></li>
+											@endforeach
 										</ul>
 									</div>
 								</div>
@@ -236,7 +232,7 @@
 								<!-- /.pro-img -->
 								<span class="span1">Macbook, Laptop</span>
 								<a href="#">
-									<h4> Apple Macbook Retina 23’ </h4>
+									<h4> {{$goods->title}} </h4>
 								</a>
 								<div class="star2">
 									<ul>
@@ -249,31 +245,23 @@
 										<li><a href="#"> Add your review</a></li>
 									</ul>
 								</div>
-								<p><strong>$160.00</strong><span class="line-through">$190.00</span></p>
-								<p class="in-stock">Availability:   <span>In Stock</span></p>
-								<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. </p>							
-								<ul class="ul-content">
-									<li> Light green crewneck sweatshirt.</li>
-									<li>Hand pockets.</li>
-									<li>Relaxed fit.</li>
-									<li>Machine wash/dry.</li>
-								</ul>
-								<form>
+								<p><strong>${{$goods->price}}</strong><span class="line-through"></span></p>
+													
+								<form action="/cart" method="post">
 									<div class="numbers-row">
-										<input type="text" name="french-hens" id="french-hens" value="3">
+									    <input type="text" name="num" id="french-hens" value="1">
+									    <input type="hidden" name="goods_id" value="{{$goods->id}}">
 									</div>
+
+									{{csrf_field()}}
+									<input type="submit" class="addtocart2" value="Add to cart" />
 								</form>
-								<a href="#" class="addtocart2">Add to cart</a>
+								
 								<a href="#" class="hart"><span class="icon icon-Heart"></span></a>
 								<div class="share">
-									<p>Share:</p>
-									<ul>
-										<li><a href="http://www.facebook.com/sharer.php?u=http://zcube.in/platin/platin/products-detail.html" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-										<li> <a href="https://twitter.com/share?url=http://zcube.in/platin/platin/products-detail.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-										<li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://zcube.in/platin/platin/products-detail.html" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-									</ul>
+									<div class="social-share" data-disabled="google,twitter,facebook"></div>
 								</div>
+
 								<div class="tag">
 									<p>Categories: <span>Bags, Blazers, Boots, Jackets, Pants, Shirts.</span></p>
 									<p>Tag: <span>outerwear.</span></p>
@@ -302,18 +290,11 @@
 									<li>Qui sequitur mutationem consuetudium lectorum. </li>
 								</ul>
 								<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.</p>
+								
 							</div>
 							<div id="menu1" class="tab-pane fade">
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when anunknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages..</p>
-								<ul>
-									<li>Claritas est etiam processus dynamicus.</li>
-									<li>Qui sequitur mutationem consuetudium lectorum. </li>
-									<li>Claritas est etiam processus dynamicus.</li>
-									<li>Qui sequitur mutationem consuetudium lectorum. </li>
-									<li>Claritas est etiam processus dynamicus.</li>
-									<li>Qui sequitur mutationem consuetudium lectorum. </li>
-								</ul>
-								<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.</p>
+								<p>{!! $goods->content !!}</p>
+								
 							</div>
 							<div id="menu2" class="tab-pane fade">
 								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when anunknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages..</p>
@@ -334,12 +315,14 @@
 					<div class="owl-demo-outer">
 						<!-- #owl-demo -->
 						<div id="owl-demo8" class="deals-wk2">
+						    
 							<div class="item">
+								@foreach($goods_pic as $k=>$v)
 								<div class="col-xs-12 col-sm-3 col-md-3">
 									<!-- .pro-text -->
 									<div class="pro-text text-center">
 										<!-- .pro-img -->
-										<div class="pro-img"> <img src="/jiuyexiangmu/home/assets/images/products/digital/2.jpg" alt="2"> <sup class="sale-tag">sale!</sup>
+										<div class="pro-img"> <img src="{{$v->pic}}" alt="2"> <sup class="sale-tag">sale!</sup>
 											<!-- .hover-icon -->
 											<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
 											<!-- /.hover-icon -->
@@ -347,74 +330,22 @@
 										<!-- /.pro-img -->
 										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
 											<a href="#">
-												<h4> Apple Macbook Retina 23’ </h4>
+												<h4> {{$goods->title}} </h4>
 											</a>
-											<p class="wk-price">$290.00 </p> <a href="#" class="add-btn">Add to cart</a> </div>
+											<p class="wk-price">${{$goods->price}} </p> <a href="#" class="add-btn">Add to cart</a> </div>
 									</div>
 									<!-- /.pro-text -->
 								</div>
-								<div class="col-xs-12 col-sm-3 col-md-3">
-									<!-- .pro-text -->
-									<div class="pro-text text-center">
-										<!-- .pro-img -->
-										<div class="pro-img"> <img src="/jiuyexiangmu/home/assets/images/products/digital/3.jpg" alt="2">
-											<!-- .hover-icon -->
-											<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
-											<!-- /.hover-icon -->
-										</div>
-										<!-- /.pro-img -->
-										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
-											<a href="#">
-												<h4> Apple Macbook Retina 23’ </h4>
-											</a>
-											<p class="wk-price">$290.00 </p> <a href="#" class="add-btn">Add to cart</a> </div>
-									</div>
-									<!-- /.pro-text -->
-								</div>
-								<div class="col-xs-12 col-sm-3 col-md-3">
-									<!-- .pro-text -->
-									<div class="pro-text text-center">
-										<!-- .pro-img -->
-										<div class="pro-img"> <img src="/jiuyexiangmu/home/assets/images/products/digital/5.jpg" alt="2"> 
-											<!-- .hover-icon -->
-											<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
-											<!-- /.hover-icon -->
-										</div>
-										<!-- /.pro-img -->
-										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
-											<a href="#">
-												<h4> Apple Macbook Retina 23’ </h4>
-											</a>
-											<p class="wk-price">$290.00 </p> <a href="#" class="add-btn">Add to cart</a> </div>
-									</div>
-									<!-- /.pro-text -->
-								</div>
-								<div class="col-xs-12 col-sm-3 col-md-3">
-									<!-- .pro-text -->
-									<div class="pro-text text-center">
-										<!-- .pro-img -->
-										<div class="pro-img"> <img src="/jiuyexiangmu/home/assets/images/products/digital/7.jpg" alt="2">
-											<!-- .hover-icon -->
-											<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
-											<!-- /.hover-icon -->
-										</div>
-										<!-- /.pro-img -->
-										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
-											<a href="#">
-												<h4> Apple Macbook Retina 23’ </h4>
-											</a>
-											<p class="wk-price">$290.00 </p> <a href="#" class="add-btn">Add to cart</a> </div>
-									</div>
-									<!-- /.pro-text -->
-								</div>
-
+								@endforeach
 							</div>
+							
 							<div class="item">
+								@foreach($goods_pic as $k=>$v)
 								<div class="col-xs-12 col-sm-3 col-md-3">
 									<!-- .pro-text -->
 									<div class="pro-text text-center">
 										<!-- .pro-img -->
-										<div class="pro-img"> <img src="/jiuyexiangmu/home/assets/images/products/digital/2.jpg" alt="2"> <sup class="sale-tag">sale!</sup>
+										<div class="pro-img"> <img src="{{$v->pic}}" alt="2"> <sup class="sale-tag">sale!</sup>
 											<!-- .hover-icon -->
 											<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
 											<!-- /.hover-icon -->
@@ -422,68 +353,15 @@
 										<!-- /.pro-img -->
 										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
 											<a href="#">
-												<h4> Apple Macbook Retina 23’ </h4>
+												<h4> {{$goods->title}} </h4>
 											</a>
-											<p class="wk-price">$290.00 </p> <a href="#" class="add-btn">Add to cart</a> </div>
+											<p class="wk-price">${{$goods->price}} </p> <a href="#" class="add-btn">Add to cart</a> </div>
 									</div>
 									<!-- /.pro-text -->
 								</div>
-								<div class="col-xs-12 col-sm-3 col-md-3">
-									<!-- .pro-text -->
-									<div class="pro-text text-center">
-										<!-- .pro-img -->
-										<div class="pro-img"> <img src="/jiuyexiangmu/home/assets/images/products/digital/3.jpg" alt="2">
-											<!-- .hover-icon -->
-											<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
-											<!-- /.hover-icon -->
-										</div>
-										<!-- /.pro-img -->
-										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
-											<a href="#">
-												<h4> Apple Macbook Retina 23’ </h4>
-											</a>
-											<p class="wk-price">$290.00 </p> <a href="#" class="add-btn">Add to cart</a> </div>
-									</div>
-									<!-- /.pro-text -->
-								</div>
-								<div class="col-xs-12 col-sm-3 col-md-3">
-									<!-- .pro-text -->
-									<div class="pro-text text-center">
-										<!-- .pro-img -->
-										<div class="pro-img"> <img src="/jiuyexiangmu/home/assets/images/products/digital/5.jpg" alt="2"> 
-											<!-- .hover-icon -->
-											<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
-											<!-- /.hover-icon -->
-										</div>
-										<!-- /.pro-img -->
-										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
-											<a href="#">
-												<h4> Apple Macbook Retina 23’ </h4>
-											</a>
-											<p class="wk-price">$290.00 </p> <a href="#" class="add-btn">Add to cart</a> </div>
-									</div>
-									<!-- /.pro-text -->
-								</div>
-								<div class="col-xs-12 col-sm-3 col-md-3">
-									<!-- .pro-text -->
-									<div class="pro-text text-center">
-										<!-- .pro-img -->
-										<div class="pro-img"> <img src="/jiuyexiangmu/home/assets/images/products/digital/7.jpg" alt="2">
-											<!-- .hover-icon -->
-											<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
-											<!-- /.hover-icon -->
-										</div>
-										<!-- /.pro-img -->
-										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
-											<a href="#">
-												<h4> Apple Macbook Retina 23’ </h4>
-											</a>
-											<p class="wk-price">$290.00 </p> <a href="#" class="add-btn">Add to cart</a> </div>
-									</div>
-									<!-- /.pro-text -->
-								</div>
+								@endforeach
+							</div>
 
-							</div>							
 							<!-- /#owl-demo -->
 						</div>
 					</div>

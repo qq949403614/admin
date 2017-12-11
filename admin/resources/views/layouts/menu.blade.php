@@ -35,12 +35,12 @@
             </li>
             <li class="sub-menu">
               <a href="javascript:;" class="">
-                  <i class="icon_table"></i>
-                  <span>Tables</span>
+                  <span>商品管理</span>
                   <span class="menu-arrow arrow_carrot-right"></span>
               </a>
               <ul class="sub">
-                  <li><a class="" href="basic_table.html">Basic Table</a></li>
+                  <li><a class="" href="/goods/create">添加商品</a></li>
+                  <li><a class="" href="/cate">商品列表</a></li>
               </ul>
             </li>
             <li class="sub-menu">

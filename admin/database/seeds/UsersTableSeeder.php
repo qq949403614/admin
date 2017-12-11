@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -16,7 +15,7 @@ class UsersTableSeeder extends Seeder
         for ($i=0;$i<100;$i++) { 
         	$data=[];
         	$data['username'] = str_random(6);
-        	$data['password'] = str_random(10);
+        	$data['password'] = Hash::make('pwd');
         	$data['email'] = str_random(11).'@qq.com';
         	$data['profile'] = '/uploads/2017-12-01/img_5a2116dec40d9.jpeg';
         	$data['status'] = 0;
