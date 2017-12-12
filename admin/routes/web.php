@@ -35,16 +35,23 @@ route::post('contact/edit','ContactController@edit');
 route::get('admin/comment','ContactController@comment');
 route::post('/destroy/{id}','ContactController@destroy');
 
-//后台路由规则
+//后台登录路由规则
 route::get('admin/login','LoginController@login');
 route::post('admin/login','LoginController@dologin');
 
 //后台登录路由组
 route::group(['middleware'=>'admin'],function(){
+	// 后台首页
 	Route::get('admin','AdminController@index');
+	// 用户管理
 	Route::resource('user','UserController');
+	// 文章管理
 	Route::resource('article','ArticleController');
+	// 导航管理
 	Route::resource('cate','CateController');
-	Route::resource('shop','ShopController');
+	// 留言管理
 	Route::resource('comment','CommentController');
+	// 店铺管理
+	Route::resource('shop','ShopController');
+	Route::get('area','ShopController@area');
 });

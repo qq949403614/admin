@@ -41,7 +41,7 @@
 <!-- top + banner 结束 --> 
 <!-- 核心 开始 --> 
 <div class="container border1 nopadding margin10">
-  <div id="vertical_navigation" class="col-lg-3 background831312 nopadding">
+  <div id="vertical_navigation" class="col-lg-3 background831312 nopadding" style="background-color:rgb(114 162 155)">
     <div class="dead_pic"><img src="img/member_center/nopic.jpg.png"><br>
       <span class="username">用户名</span></div>
     <div class="usertype">用户类型： 普通用户<br>

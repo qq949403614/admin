@@ -32,7 +32,7 @@ class ContactController extends Controller
         $d[]=$data;
 
        DB::table('comment')->insert($d); 
-       return back()->with('msg','留言成功');    
+       return back()->with('msg','Message success');    
     }
 
     public function comment(Request $request)
@@ -48,6 +48,11 @@ class ContactController extends Controller
         Db::table('comment')->select();
         return view('admin.comment.message',['comment'=>$comment,'keywords'=>$keywords,'num'=>$num]);
     }   
+
+    public function show()
+    {
+        echo "string"; 
+    }
 
     public function destroy(Request $request,$id)
     {

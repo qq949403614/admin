@@ -4,7 +4,6 @@
 <link href="/css/bootstrap-theme.css" rel="stylesheet">
 <!--external css-->
 <!-- font icon -->
-<!-- <link href="/bootstrap_admin/css/elegant-icons-style.css" rel="stylesheet" /> -->
 <link href="/css/font-awesome.min.css" rel="stylesheet" />
 <!-- owl carousel -->
 <link href="/css/owl.carousel.css" rel="stylesheet">
@@ -16,6 +15,7 @@
 <link href="/css/style-responsive.css" rel="stylesheet" />
 <link href="/css/xcharts.min.css" rel=" stylesheet">	
 <link href="/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+
 <!-- 文章编辑器 -->
 <script type="text/javascript" charset="utf-8" src="/plugins/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/plugins/ueditor/ueditor.all.min.js"> </script>

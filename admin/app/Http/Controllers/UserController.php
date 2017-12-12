@@ -137,7 +137,6 @@ class UserController extends Controller
            return back()->with('msg','删除成功');
         }else{
            return back()->with('msg','删除失败');
-
         }
     }
 }

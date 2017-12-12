@@ -9,3 +9,5 @@
 <script src="/js/scripts.js"></script>
 @section('js')
 @show
+@section('area')
+@show
