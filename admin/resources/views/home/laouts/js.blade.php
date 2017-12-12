@@ -9,3 +9,5 @@
 <script src="/jiuyexiangmu/home/assets/owl-carousel/owl.carousel.js"></script>
 <!--  Custom Theme JavaScript  -->
 <script src="/jiuyexiangmu/home/assets/js/custom.js"></script>
+@section('js')
+@endsection

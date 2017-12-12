@@ -45,6 +45,16 @@
             </li>
             <li class="sub-menu">
               <a href="javascript:;" class="">
+                  <span>商品管理</span>
+                  <span class="menu-arrow arrow_carrot-right"></span>
+              </a>
+              <ul class="sub">
+                  <li><a class="" href="/goods/create">添加商品</a></li>
+                  <li><a class="" href="/goods">商品列表</a></li>
+              </ul>
+            </li>
+            <li class="sub-menu">
+              <a href="javascript:;" class="">
                   <span>留言管理</span>
                   <span class="menu-arrow arrow_carrot-right"></span>
               </a>

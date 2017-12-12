@@ -40,28 +40,11 @@
                                     <a href="#">My Profile</a>
                                 </li>
                                 <li>
-                                    <a href="#"> My Inbox</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Timeline</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Chats</a>
-                                </li>
-                                <li>
-                                    <a href="login.html"> Log Out</a>
-                                </li>
-                                <li>
-                                    <a href="documentation.html">Documentation</a>
-                                </li>
-                                <li>
-                                    <a href="documentation.html">Documentation</a>
+                                    <a href="/admin/login"> Log Out</a>
                                 </li>
                             </ul>
                         </li>
-                        <!-- user login dropdown end -->
                     </ul>
-                    <!-- notificatoin dropdown end-->
                 </div>
         </header>      
         @include('layouts.menu')    

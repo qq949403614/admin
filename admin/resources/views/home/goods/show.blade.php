@@ -21,7 +21,7 @@
 	<!-- Style CSS -->
 	<link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/style.css" type="text/css">
 	<!-- Style CSS -->
-	<link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/slider.css" type="text/css">
+	<link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/jcarousel.connected-carousels.css" type="text/css">
 	<!--  baguetteBox -->
 	<link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/baguetteBox.css">
 	<!-- Owl Carousel Assets -->
@@ -177,120 +177,200 @@
 			</div>
 		</section>
 	</header>
-	 <section class="shopping-cart">
-            <!-- .shopping-cart -->
-            <div class="container">
-				<div class="row">
+	<!-- newsletter -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+	<section class="grid-shop">
+		<!-- .grid-shop -->
+		<div class="container">
+			<div class="row">
 				<div class="col-md-12">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
-						<li class="breadcrumb-item active">Library</li>
+						<li class="breadcrumb-item active">Shop Detail.</li>
 					</ol>
+					<div class="row">						
+						<!-- left side -->
+						<div class="col-sm-5 col-md-5">
+							<!-- product gallery -->
+							<div class="connected-carousels">
+								<div class="stage">
+									<div class="carousel carousel-stage" data-jcarousel="true">
+										<ul style="left: 0px; top: 0px;">
+											@foreach($goods_pic as $k=>$v)
+											<li><img class="zoom_01" src="{{$v->pic}}" data-zoom-image="assets/images/products/fashion/12.jpg" alt="qoute-icon"></li>
+											@endforeach
+										</ul>
+									</div>
+									<p class="photo-credits">
+										Photos by <a href="http://www.mw-fotografie.de">Marc Wiegelmann</a>
+									</p>
+									<a href="#" class="prev prev-stage inactive" data-jcarouselcontrol="true"><span>‹</span></a>
+									<a href="#" class="next next-stage" data-jcarouselcontrol="true"><span>›</span></a>
+								</div>
+
+								<div class="navigation">
+									<a href="#" class="prev prev-navigation" data-jcarouselcontrol="true">‹</a>
+									<a href="#" class="next next-navigation inactive" data-jcarouselcontrol="true">›</a>
+									<div class="carousel carousel-navigation" data-jcarousel="true">
+										<ul style="left: -202px; top: 0px;">
+											@foreach($goods_pic as $k=>$v)
+											<li data-jcarouselcontrol="true" class="active"><img src="{{$v->pic}}" width="110" height="110" alt=""></li>
+											@endforeach
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<!-- / product gallery -->
+						</div>
+						<!-- left side -->
+						<!-- right side -->
+						<div class="col-sm-7 col-md-7">
+							<!-- .pro-text -->
+							<div class="pro-text product-detail">
+								<!-- /.pro-img -->
+								<span class="span1">Macbook, Laptop</span>
+								<a href="#">
+									<h4> {{$goods->title}} </h4>
+								</a>
+								<div class="star2">
+									<ul>
+										<li class="yellow-color"><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li class="yellow-color"><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li class="yellow-color"><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li class="yellow-color"><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li><a href="#">10 review(s)</a></li>
+										<li><a href="#"> Add your review</a></li>
+									</ul>
+								</div>
+								<p><strong>${{$goods->price}}</strong><span class="line-through"></span></p>
+													
+								<form action="/cart" method="post">
+									<div class="numbers-row">
+									    <input type="text" name="num" id="french-hens" value="1">
+									    <input type="hidden" name="goods_id" value="{{$goods->id}}">
+									</div>
+
+									{{csrf_field()}}
+									<input type="submit" class="addtocart2" value="Add to cart" />
+								</form>
+								
+								<a href="#" class="hart"><span class="icon icon-Heart"></span></a>
+								<div class="share">
+									<div class="social-share" data-disabled="google,twitter,facebook"></div>
+								</div>
+
+								<div class="tag">
+									<p>Categories: <span>Bags, Blazers, Boots, Jackets, Pants, Shirts.</span></p>
+									<p>Tag: <span>outerwear.</span></p>
+								</div>
+							</div>
+							<!-- /.pro-text -->
+						</div>
+					</div>
+					<div class="row">
+						<div class="tab-bg">
+							<ul>
+								<li class="active"><a data-toggle="tab" href="#home">Description</a></li>
+								<li><a data-toggle="tab" href="#menu1">ADDITIONAL INFORMATION</a></li>
+								<li><a data-toggle="tab" href="#menu2">REVIEWS (4)</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div id="home" class="tab-pane fade in active">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when anunknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages..</p>
+								<ul>
+									<li>Claritas est etiam processus dynamicus.</li>
+									<li>Qui sequitur mutationem consuetudium lectorum. </li>
+									<li>Claritas est etiam processus dynamicus.</li>
+									<li>Qui sequitur mutationem consuetudium lectorum. </li>
+									<li>Claritas est etiam processus dynamicus.</li>
+									<li>Qui sequitur mutationem consuetudium lectorum. </li>
+								</ul>
+								<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.</p>
+								
+							</div>
+							<div id="menu1" class="tab-pane fade">
+								<p>{!! $goods->content !!}</p>
+								
+							</div>
+							<div id="menu2" class="tab-pane fade">
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when anunknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages..</p>
+								<ul>
+									<li>Claritas est etiam processus dynamicus.</li>
+									<li>Qui sequitur mutationem consuetudium lectorum. </li>
+									<li>Claritas est etiam processus dynamicus.</li>
+									<li>Qui sequitur mutationem consuetudium lectorum. </li>
+									<li>Claritas est etiam processus dynamicus.</li>
+									<li>Qui sequitur mutationem consuetudium lectorum. </li>
+								</ul>
+								<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.</p>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-12">
-                  <h2>You cart items</h2>
-                  <table>
-                     <tr>
-                        <th></th>
-                        <th>Product name</th>
-                        <th>Description</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total Price</th>
-                        <th></th>
-                     </tr>
-                     <tr>
-                        <td><img src="/jiuyexiangmu/home/assets/images/elec-img4.jpg" alt="13"></td>
-                        <td>Name product #01</td>
-                        <td>Lorem Ipsum is simply dummy text of the printing<br/> and typesetting industry.</td>
-                        <td><strong>$160.00</strong></td>
-                        <td><input type="number" name="quantity" min="1" max="500"></td>
-                        <td><strong>$160.00</strong></td>
-                        <td><span class="red"><i class="fa fa-times" aria-hidden="true"></i></span></td>
-                     </tr>
-                     <tr>
-                        <td><img src="/jiuyexiangmu/home/assets/images/elec-img3.jpg" alt="13"></td>
-                        <td>Name product #02</td>
-                        <td>Lorem Ipsum is simply dummy text of the printing<br/> and typesetting industry.</td>
-                        <td><strong>$180.00</strong></td>
-                        <td><input type="number" name="quantity" min="1" max="500"></td>
-                        <td><strong>$180.00</strong></td>
-                        <td><span><i class="fa fa-times" aria-hidden="true"></i></span></td>
-                     </tr>
-                  </table>
-                  <div class="col-sm-6 col-md-6">
-                     <a href="#" class="button red">CONTINUE SHOPPING</a>
-                  </div>
-                  <div class="col-sm-6 col-md-6 text-right">
-                     <a href="#" class="button">UPDATE SHOPPING CART</a>
-                     <a href="#" class="button">CLEAR SHOPPING CART</a>
-                  </div>
-                  <div class="col-sm-4 col-md-4">
-                     <div class="shipping-outer">
-                        <h2>Calculate shipping</h2>
-                        <div class="row">
-                           <div class="col-md-12 counttry">
-                              <div class="lable">Select your Counttry:</div>
-                              <input name="counttry" placeholder="United States (USA)" type="text">
-                           </div>
-                           <div class="col-sm-6 col-md-6">
-                              <div class="lable">Select your State:</div>
-                              <div class="size State">
-                                 <div class="select-option">
-                                    <select>
-                                       <option value="28">28</option>
-                                       <option value="32">32</option>
-                                       <option value="34">34</option>
-                                       <option value="36">36</option>
-                                       <option value="Featured Pots">State / City</option>
-                                    </select>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-sm-6 col-md-6">
-                              <div class="lable">Zip Code:</div>
-                              <input name="counttry" placeholder="Zip Code" type="text">
-                           </div>
-                        </div>
-                        <a href="#" class="button2">Update Shipping</a>
-                     </div>
-                  </div>
-                  <div class="col-sm-4 col-md-4">
-                     <div class="shipping-outer">
-                        <h2>Coupon code</h2>
-                        <div class="row">
-                           <div class="col-md-12">
-                              <div class="lable">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-                              <input name="counttry" type="text">
-                           </div>
-                           <div class="col-md-12">
-                              <div class="lable">Coupon Code:</div>
-                              <input name="Coupon Code" placeholder="Coupon Code" type="text">
-                           </div>
-                        </div>
-                        <a href="#" class="button2">REdeem code</a>        		
-                     </div>
-                  </div>
-                  <div class="col-sm-4 col-md-4">
-                     <div class="shipping-outer">
-                        <h2>Cart totals</h2>
-                        <ul>
-                           <li>Cart Subtotal: <strong>$640.00</strong></li>
-                           <li>Shipping and Handling: <strong>$10.00</strong></li>
-                           <li>Cart Totals: <strong>$650.00</strong></li>
-                           <li class="text-center">
-                              <a href="#" class="redbutton">Proceed to checkout</a>
-                              <a href="#">Checkout with mutilple adresses</a>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
+					<div class="owl-demo-outer">
+						<!-- #owl-demo -->
+						<div id="owl-demo8" class="deals-wk2">
+						    
+							<div class="item">
+								@foreach($goods_pic as $k=>$v)
+								<div class="col-xs-12 col-sm-3 col-md-3">
+									<!-- .pro-text -->
+									<div class="pro-text text-center">
+										<!-- .pro-img -->
+										<div class="pro-img"> <img src="{{$v->pic}}" alt="2"> <sup class="sale-tag">sale!</sup>
+											<!-- .hover-icon -->
+											<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
+											<!-- /.hover-icon -->
+										</div>
+										<!-- /.pro-img -->
+										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
+											<a href="#">
+												<h4> {{$goods->title}} </h4>
+											</a>
+											<p class="wk-price">${{$goods->price}} </p> <a href="#" class="add-btn">Add to cart</a> </div>
+									</div>
+									<!-- /.pro-text -->
+								</div>
+								@endforeach
+							</div>
+							
+							<div class="item">
+								@foreach($goods_pic as $k=>$v)
+								<div class="col-xs-12 col-sm-3 col-md-3">
+									<!-- .pro-text -->
+									<div class="pro-text text-center">
+										<!-- .pro-img -->
+										<div class="pro-img"> <img src="{{$v->pic}}" alt="2"> <sup class="sale-tag">sale!</sup>
+											<!-- .hover-icon -->
+											<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
+											<!-- /.hover-icon -->
+										</div>
+										<!-- /.pro-img -->
+										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
+											<a href="#">
+												<h4> {{$goods->title}} </h4>
+											</a>
+											<p class="wk-price">${{$goods->price}} </p> <a href="#" class="add-btn">Add to cart</a> </div>
+									</div>
+									<!-- /.pro-text -->
+								</div>
+								@endforeach
+							</div>
+
+							<!-- /#owl-demo -->
+						</div>
+					</div>
 				</div>
-               
-            </div>
-            <!-- /.shopping-cart -->
-         </section>
+				<!-- right side -->
+			</div>
+		</div>
+		<!-- /.grid-shop -->
+	</section>
 	<!-- newsletter -->
 	<section class="newsletter">
 		<div class="container">
@@ -309,7 +389,7 @@
 		</div>
 	</section>
 	<!-- /newsletter -->
-	@include('home.laouts.foot')
+	@include('/home.laouts.foot')
 	<!-- sticky-socia -->
 	<aside id="sticky-social">
 		<ul>
@@ -326,14 +406,26 @@
 	<!-- Bootstrap Core JavaScript -->
 	<script src="/jiuyexiangmu/home/assets/js/bootstrap.min.js"></script>
 	<script src="/jiuyexiangmu/home/assets/js/bootstrap-dropdownhover.min.js"></script>
+	<script src="/jiuyexiangmu/home/assets/js/incrementing.js"></script>
 	<!-- Plugin JavaScript -->
 	<script src="/jiuyexiangmu/home/assets/js/jquery.easing.min.js"></script>
 	<script src="/jiuyexiangmu/home/assets/js/wow.min.js"></script>
 	<!-- owl carousel -->
 	<script src="/jiuyexiangmu/home/assets/owl-carousel/owl.carousel.js"></script>
 	<!--  Custom Theme JavaScript  -->
-	<script src="/jiuyexiangmu/home/assets/js/filter-price.js"></script>
 	<script src="/jiuyexiangmu/home/assets/js/custom.js"></script>
+	<!--  jcarousel Theme JavaScript  -->
+	<script type="text/javascript" src="/jiuyexiangmu/home/assets/js/jquery.jcarousel.min.js"></script>
+	<script type="text/javascript" src="/jiuyexiangmu/home/assets/js/jcarousel.connected-carousels.js"></script>
+	<script type="text/javascript" src="/jiuyexiangmu/home/assets/js/jquery.elevatezoom.js"></script>
+	<script>
+		$('.zoom_01').elevateZoom({
+			zoomType: "inner",
+			cursor: "crosshair",
+			zoomWindowFadeIn: 500,
+			zoomWindowFadeOut: 750
+		});
+	</script>
 </body>
 
 </html>

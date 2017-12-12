@@ -17,17 +17,21 @@ Route::get('/', function () {
 
 //前台路由规则
 Route::get('/center','CenterController@center');
-Route::get('/list','ListController@list');
-Route::get('/detail','DetailController@detail');
+Route::get('/contact','ContactController@contact');
 Route::get('/cart','CartController@cart');
 Route::get('/checkout','CheckoutController@checkout');
-
+Route::get('/list','ListController@list');
+Route::get('/detail','DetailController@detail');
 Route::get('home','HomeController@index');
 Route::get('registers','HomeController@registers');
 Route::post('registers','HomeController@registers');
 Route::get('register','HomeController@doregister');
 Route::get('message','CommonController@message');
 Route::get('confirm/{id}','HomeController@confirm');
+Route::get('/goods/list','GoodsController@glist');
+Route::post('/cart','CartController@store');
+Route::get('/cart','CartController@index');
+Route::get('/cart/delete','CartController@delete');
 
 //留言管理
 Route::get('home/contact','ContactController@index');
@@ -54,4 +58,6 @@ route::group(['middleware'=>'admin'],function(){
 	// 店铺管理
 	Route::resource('shop','ShopController');
 	Route::get('area','ShopController@area');
-});
+	// 商品管理
+	Route::resource('goods','GoodsController');
+});	

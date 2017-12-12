@@ -23,7 +23,6 @@ class LoginController extends Controller
     	if (empty($user)) {
     		return back()->with('msg','用户名输入有误');
     	}
-
     	if(Hash::check($data['password'],$user->password)){
             session(['id'=> $user->id]);
     		// session('username',$user->username);
