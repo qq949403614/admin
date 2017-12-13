@@ -23,15 +23,13 @@ Route::get('/checkout','CheckoutController@checkout');
 Route::get('/list','ListController@list');
 Route::get('/detail','DetailController@detail');
 Route::get('home','HomeController@index');
-Route::get('registers','HomeController@registers');
-Route::post('registers','HomeController@registers');
-Route::get('register','HomeController@doregister');
 Route::get('message','CommonController@message');
 Route::get('confirm/{id}','HomeController@confirm');
 Route::get('/goods/list','GoodsController@glist');
 Route::post('/cart','CartController@store');
 Route::get('/cart','CartController@index');
 Route::get('/cart/delete','CartController@delete');
+//注册
 
 //留言管理
 Route::get('home/contact','ContactController@index');
@@ -49,6 +47,7 @@ route::group(['middleware'=>'admin'],function(){
 	Route::get('admin','AdminController@index');
 	// 用户管理
 	Route::resource('user','UserController');
+	route::post('{id}/mima','UserController@mima');
 	// 文章管理
 	Route::resource('article','ArticleController');
 	// 导航管理

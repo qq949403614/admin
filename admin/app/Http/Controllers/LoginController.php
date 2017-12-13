@@ -25,6 +25,7 @@ class LoginController extends Controller
     	}
     	if(Hash::check($data['password'],$user->password)){
             session(['id'=> $user->id]);
+            session(['username'=> $user->username]);
     		// session('username',$user->username);
             // dd(session('id',$user->id));die;
     		return redirect('/admin')->with('msg','登陆成功!!!');

@@ -7,7 +7,7 @@ use Hash;
 use DB; 
 class HomeController extends Controller
 {
-    
+    // 注册页
     public function index(){
     	return view('home.index');
     }
@@ -23,6 +23,7 @@ class HomeController extends Controller
     {
     	//检测验证码是否正确
         $code = $request->vcode;
+        dd($code);
         if(session('vcode') != $code) {
             return back()->with('msg','验证码错误');
         }
