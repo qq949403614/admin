@@ -35,6 +35,12 @@ route::group(['middleware'=>'user'],function(){
 	Route::post('cart','CartController@store');
 	Route::get('/cart','CartController@index');
 	Route::get('/cart/delete','CartController@delete');
+
+		//个人中心
+    Route::get('/center','UserController@center');
+    Route::resource('address','AddressController');
+    Route::get('/getarea','AddressController@getarea');
+    Route::post('/dingdan/confirm','DingdanController@confirm');
 });
 //注册
 Route::get('login','EntryController@login');
@@ -65,11 +71,7 @@ route::group(['middleware'=>'admin'],function(){
 	Route::resource('cate','CateController');
 
 
-	//个人中心
-    Route::get('/center','UserController@center');
-    Route::resource('address','AddressController');
-    Route::get('/getarea','AddressController@getarea');
-    Route::post('/dingdan/confirm','DingdanController@confirm');
+
 
 
   

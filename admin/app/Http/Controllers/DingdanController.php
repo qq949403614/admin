@@ -44,7 +44,7 @@ class DingdanController extends Controller
         //显示订单的确认页面
         
         //读取用户的收货地址
-        $addresses = DB::table('addresses')->where('user_id', session('id'))->get();
+        $addresses = DB::table('addresses')->where('user_id',session('id'))->get();
         foreach ($addresses as $key => &$value) {
             $value->pname = DB::table('areas')->where('id',$value->province)->value('area_name');
             $value->cname = DB::table('areas')->where('id',$value->city)->value('area_name');
