@@ -47,11 +47,6 @@
 								<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
 									<i aria-hidden="true"></i> Personal center
 								</a>
-								<ul class="dropdown-menu">
-									<li><a href="#">My Account</a></li>
-									<li><a href="#">Change Password</a></li>
-									<li><a href="#">Change Address</a></li>
-								</ul>
 							</div>
 						</li>
 					</ul>

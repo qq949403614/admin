@@ -140,4 +140,10 @@ class UserController extends Controller
 
         }
     }
+
+     public function center()
+    {
+        return view('home.user.center');
+    }
+   
 }

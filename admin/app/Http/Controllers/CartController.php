@@ -10,6 +10,7 @@ class CartController extends Controller
     //
      public function store(Request $request)
     {
+        
     	$data = $request->only(['goods_id','num']);
     	$data['created_at'] = date('Y-m-d H:i:s');
     	$data['user_id'] = session('id');

@@ -39,13 +39,8 @@
                   <span class="menu-arrow arrow_carrot-right"></span>
               </a>
               <ul class="sub">
-<<<<<<< HEAD
                   <li><a class="" href="/goods/create">添加商品</a></li>
-                  <li><a class="" href="/cate">商品列表</a></li>
-=======
-                  <li><a class="" href="/shop/create">添加商品</a></li>
-                  <li><a class="" href="/shop">商品列表</a></li>
->>>>>>> 545b8ee30c40af1a27ca96d67822ea200083f247
+                  <li><a class="" href="/goods">商品列表</a></li>
               </ul>
             </li>
             <li class="sub-menu">
