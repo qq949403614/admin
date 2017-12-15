@@ -35,6 +35,7 @@
 		                    	<th>id</th>
 		                        <th>用户名</th>
 		                        <th>邮箱</th>
+		                        <th>内容</th>
 		                        <th>留言时间</th>
 		                        <th>状态</th>
 		                        <th>操作</th>
@@ -47,6 +48,7 @@
 				                    <td>{{$v->id}}</td>
 				                    <td>{{$v->username}}</td>
 				                    <td>{{$v->email}}</td>
+				                    <td>{!!$v->content!!}</td>
 				                    <td>{{$v->time}}</td>
 				                    <td>
 				                    	@if($v->status)

@@ -31,37 +31,20 @@
                     <ul class="nav pull-right top-menu">
                         <li class="dropdown">
                             <a data-toggle="dropdown" class="dropdown-toggle" href="">
-                                <span class="username">用户名</span>
+                                <span><strong>{{session('username')}}</strong></span>
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu extended logout">
                                 <div class="log-arrow-up"></div>
                                 <li class="eborder-top">
-                                    <a href="#">My Profile</a>
+                                    <a href="/user/{{session('id')}}/edit">查看我的信息</a>
                                 </li>
                                 <li>
-                                    <a href="#"> My Inbox</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Timeline</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Chats</a>
-                                </li>
-                                <li>
-                                    <a href="login.html"> Log Out</a>
-                                </li>
-                                <li>
-                                    <a href="documentation.html">Documentation</a>
-                                </li>
-                                <li>
-                                    <a href="documentation.html">Documentation</a>
+                                    <a href="/logout">退出</a>
                                 </li>
                             </ul>
                         </li>
-                        <!-- user login dropdown end -->
                     </ul>
-                    <!-- notificatoin dropdown end-->
                 </div>
         </header>      
         @include('layouts.menu')    
@@ -70,12 +53,12 @@
             <header class="wrapper">
                 <div class="row">
                     <div class="col-lg-12">
-                    <h2 class="page-header"> 欢 迎 您 回 来 ! ! ! </h2>
+                    <h1 class="page-header"> <strong>欢 迎<a href="/user/{{session('id')}}/edit">{{session('username')}}</a>回 来 ! ! ! </strong></h1>
                     </div>
                 </div>
                 <div class="row">
                   <div class="col-lg-12">
-                     <img src="/image/sakdljfajflkk.jpg" width="100px" alt="">
+                     <img src="/image/sakdljfajflkk.jpg" width="600px" alt="">
                   </div>
                 </div>                              
             </header> 

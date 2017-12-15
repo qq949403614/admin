@@ -58,10 +58,11 @@
 			                    </td>
 			                    <form action="/user/{{$v->id}}" method="post">
 				                    <td>
-					                    <a class="btn btn-info btn-sm" href="/user/{{$v->id}}/edit">修改</a> 
+				                    	<a class="btn btn-info btn-sm" href="/user/{{$v->id}}/edit" title="修改">修改</a>
 										{{method_field('DELETE')}}
 										{{csrf_field()}}
-				                    	<input type="submit" class="del btn btn-danger btn-sm" value="删除">
+				                    	<input type="submit" class="del btn btn-danger btn-sm" value="删除" title="删除">
+				                    	<a class="btn btn-warning btn-sm" href="/user/{{$v->id}}" title="密码修改">修改密码</a>
 				                    </td>
 			                   </form>
 			                </tr>

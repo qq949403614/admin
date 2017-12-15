@@ -104,7 +104,7 @@ class ArticleController extends Controller
     public function update(Request $request, $id)
     {
         //接受前台的修改信息
-        $data = $request->only('title','content');
+        $data = $request->except('_token','_method');
         // 接受文件上传
         if($request->hasFile('pic')){
             // 获取文件后缀

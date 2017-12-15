@@ -77,7 +77,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        //修改密码
+        return view('admin.user.show', compact('id'));
     }
 
     /**
@@ -137,7 +138,16 @@ class UserController extends Controller
            return back()->with('msg','删除成功');
         }else{
            return back()->with('msg','删除失败');
-
+        }
+    }
+    public function mima(Request $request, $id)
+    {
+        $data = $request->only('password');
+        $data['password']=Hash::make($data['password']);
+        if(DB::table('admin')->where('id',$id)->update($data)){
+            return redirect('/user')->with('msg','恭喜您,修改成功!!!');
+        }else{
+            return back()->with('msg','恭喜您,修改成功!!!');
         }
     }
 

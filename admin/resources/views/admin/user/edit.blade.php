@@ -47,6 +47,9 @@
 						</div>
 						<div class="col-sm-1">
 	                      <input type="reset" class="btn btn-info text-center"></input>                
+	                    </div> 
+	                    <div class="col-sm-3">
+	                      <a href="/user/{{session('id')}}" class="btn btn-info">修改密码</a>                
 	                    </div>  
 	                  </div>
 	              </form>

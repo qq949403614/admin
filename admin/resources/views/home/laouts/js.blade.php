@@ -9,5 +9,10 @@
 <script src="/jiuyexiangmu/home/assets/owl-carousel/owl.carousel.js"></script>
 <!--  Custom Theme JavaScript  -->
 <script src="/jiuyexiangmu/home/assets/js/custom.js"></script>
+<script src="/js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="/js/bootstrap.js" type="text/javascript"></script>
+<script src="/js/login-register.js" type="text/javascript"></script>
 @section('js')
 @endsection
+@section('jss')
+@show

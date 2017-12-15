@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Contact us</title>
 	<!-- Latest Bootstrap min CSS -->
 	<link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/bootstrap.min.css" type="text/css">
 	<!-- Dropdownhover CSS -->
@@ -170,23 +170,21 @@
 	</header>
 	<section class="shopping-cart">
         <div class="container">
-
 			<div class="row">
 				<div class="col-md-12">
 					<ol class="breadcrumb">
-						<li>当前位置</li>
+						<li>current location</li>
 						<li class="breadcrumb-item"><a href="/">Home</a></li>
 						<li class="breadcrumb-item active">contact</li>
 					</ol>
 				</div>
-				
 				<div class="col-md-12 contact-info pull-left">
                     <div class="contact-form">
                         <form action="/contact/edit" method="post" id="commentform" class="comment-form">
 							<div class="row">
 								<div class="col-md-12 text-center">
 								@if(session('msg'))
-		        				<div style="color:red;background:#ff0">{{session('msg')}}</div>
+		        				<div class="col-md-12 alert alert-success" role="alert">{{session('msg')}}</div>
 		        				@endif
 								 	<div class="contact-bg">                 
 										<h2>Review area</h2>
@@ -221,7 +219,6 @@
                     </div>
                 </div>
 			</div>
-
         </div>
     </section>
 	<!-- newsletter -->
