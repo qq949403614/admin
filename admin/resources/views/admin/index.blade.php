@@ -40,7 +40,7 @@
                                     <a href="/user/{{session('id')}}/edit">查看我的信息</a>
                                 </li>
                                 <li>
-                                    <a href="/admin/login">退出</a>
+                                    <a href="/logout">退出</a>
                                 </li>
                             </ul>
                         </li>

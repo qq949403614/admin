@@ -64,4 +64,6 @@ route::group(['middleware'=>'admin'],function(){
 	Route::get('area','ShopController@area');
 	// 商品管理
 	Route::resource('goods','GoodsController');
+
+	Route::get('/logout','LoginController@logout');
 });	

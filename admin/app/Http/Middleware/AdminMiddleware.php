@@ -20,8 +20,9 @@ class AdminMiddleware
     {
         // dd(empty($id));die;
         $id = session('uid');
+        $user = session('username');
         // 判断是否登录
-        if (empty($id)) {
+        if (empty($id) || empty($user)) {
             return redirect('/admin/login')->with('msg','登录失败!!!');
         }
         return $next($request);
