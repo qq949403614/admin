@@ -153,10 +153,7 @@
 </script>
 @endsection
 <header>
-<<<<<<< HEAD
 
-=======
->>>>>>> 6fcb935022223f5f510bd30da15d9338fc0a8dec
 	<!--  top-header  -->
 	<div class="top-header">
 		<div class="container">
