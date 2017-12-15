@@ -4,8 +4,6 @@
 <link rel="stylesheet" href="/jiuyexiangmu/home/assets/css/bootstrap-dropdownhover.min.css" type="text/css">
 <!-- latest fonts awesome -->
 <link rel="stylesheet" href="/jiuyexiangmu/home/assets/font/css/font-awesome.min.css" type="text/css">
-<!-- simple line fonts awesome -->
-<link rel="stylesheet" href="/jiuyexiangmu/home/assets/simple-line-icon/css/simple-line-icons.css" type="text/css">
 <!-- stroke-gap-icons -->
 <link rel="stylesheet" href="/jiuyexiangmu/home/assets/stroke-gap-icons/stroke-gap-icons.css" type="text/css">
 <!-- Animate CSS -->
@@ -17,3 +15,4 @@
 <!-- Owl Carousel Assets -->
 <link href="/jiuyexiangmu/home/assets/owl-carousel/owl.carousel.css" rel="stylesheet">
 <link href="/jiuyexiangmu/home/assets/owl-carousel/owl.theme.css" rel="stylesheet">
+<link href="/css/login-register.css" rel="stylesheet" />

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title></title>
+<title>index</title>
+
 @include('/home.laouts.css')
 </head>
 <body>
@@ -13,11 +13,149 @@
 	<div id="loading">
 	</div>
 </div>
+ <!--login-->
+    <div class="container">
+    	<div class="modal fade login" id="loginModal">
+    	      <div class="modal-dialog login animated">
+    		      <div class="modal-content">
+    		         <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Login with</h4>
+                    </div>
+                    <div class="modal-body">  
+                        <div class="box">
+                             <div class="content">
+                                <div class="social">
+                                    <a href="#">
+                                    	<img src="/img/index/back_top_qq.png" alt="">
+                                    </a>
+                                    <a href="">
+                                    	<img src="/img/index/back_top_wx.png" alt="">
+                                    </a>
+                                    <a href="">
+                                    	<img src="/img/index/back_top_call.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="division">
+                                    <div class="line l"></div>
+                                      <span>or</span>
+                                    <div class="line r"></div>
+                                </div>
+                                <div class="error"></div>
+                                <div class="form loginBox">
+                                    <form method="post" action="/login" accept-charset="UTF-8">
+                                    <input id="name" class="form-control" type="text" placeholder="username" name="username">
+                                    <input id="pwd" class="form-control" type="password" placeholder="password" name="pwd">
+                                    {{csrf_field()}}
+                                    <input class="btn btn-default btn-login" type="submit" value="sgin in">
+                                    </form>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="box">
+                            <div class="content registerBox" style="display:none;">
+                             <div class="form">
+                                <form method="post" html="{:multipart=>true}" data-remote="true" action="/entry">
+                                <input id="username" class="form-control" type="text" placeholder="username" name="username">
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                <input id="Repeat_Password" class="form-control" type="password" placeholder="Repeat_Password" name="Repeat_Password">
+                                <div class="col-md-8" style="padding:0px;margin:0px;">
+	                                <input id="phone" class="form-control" type="text" placeholder="phone" name="phone">
+                                </div>
+                                <div class="col-md-4" style="padding:0px;margin:0px;">
+	                                <input class="col-md-12 btn btn-success btn-lg" type="button" id="send" value="send">
+                                </div>
+                                <input id="code" class="form-control" type="text" placeholder="code" name="code">
+                                <input id="email" class="form-control" type="text" placeholder="email" name="email">
+                                {{csrf_field()}}
+                                <input id="register" class="btn btn-default btn-register" type="submit" value="register">
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="forgot login-footer">
+                            <span>Looking to 
+                                 <a href="javascript: showRegisterForm();">create an account</a>
+                            </span>
+                        </div>
+                        <div class="forgot register-footer" style="display:none">
+                             <span>Already have an account?</span>
+                             <a href="javascript: showLoginForm();">Login</a>
+                        </div>
+                    </div>        
+    		      </div>
+    	      </div>
+    	</div>
+    </div>
+ <!--end login -->
+@section('jss')
+<script>
+	// 验证表单
+	$('#register').click(function(){
+		// 用户名正则表达式
+		var uPattern = /^[\u4e00-\u9fa5_a-zA-Z0-9]{6,15}$/;
+		var username = $('#username').val();
+		// 密码正则表达式
+		var password = /^\w{6,15}$/;
+		var pwd = $('#password').val();
+		var pwdw = $('#Repeat_Password').val();
+		// 邮箱正则表达式
+		var EmailRegular = /^[\w-]+(\.[\w-])*@[\w-]+(\.[\w-]+)+$/;
+		var email=$('#email').val();
+		// 验证用户名
+		if(!uPattern.test(username)){
+			alert('Please enter 6-15 valid names');
+			return false;
+		} 
+		// 验证密码
+		if(!password.test(pwd)){
+			alert('Please enter 6-15 letters passwerd');
+			return false;
+		}
+		// 确认密码
+		if(pwd != pwdw){
+			alert('Two cipher inconsistencies');
+			return false;
+		}
+		// 验证邮箱
+		if(!EmailRegular.test(email) ){
+			alert('Please enter the correct input Email');
+			return false;
+		}
+	});
+	// 验证手机验证码
+	$("#send").click(function(){
+		// 手机号正则表达式
+		var reg = /1\d{10}/;
+		var phone = $('input[name=phone]').val();
+		if (!reg.test(phone)) {
+			alert('手机格式有误!!!');
+			return;
+		}		
+		$.get('/message',{phone:phone},function(data){
+			alert(data.data.vcode);
+			console.log(data);
+		});
+		$(this).addClass("disabled");
+		var time = 60;
+		var init = setInterval(function(){
+			$('#send').val(time+'send');
+			time--;
+			if(time < 0){
+				clearInterval(init);
+				$('#send').removeClass('disabled');
+				$('#send').val('send');
+			}
+		},1000);
+	}); 	
+</script>
+@endsection
 <header>
 	<!--  top-header  -->
 	<div class="top-header">
 		<div class="container">
-
 			<div class="col-md-6">
 				<div class="top-header-left">
 					<ul>
@@ -47,9 +185,10 @@
 							</div>
 						</li>
 						<li>
-							<span><a href="/registers" class="btn btn-default dropdown-toggle">Hello Custumer - Login or Registe!</a></span>
-
+							hello! please<a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Login</a>
+                			or<a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a>
 						</li>
+
 					</ul>
 				</div>
 			</div>
@@ -73,6 +212,9 @@
 	<!--  /top-header  -->
 	<section class="top-md-menu">
 		<div class="container">
+			@if(session('msg'))
+			<div class="alert alert-danger text-center">{{session('msg')}}</div>
+			@endif
 			<div class="col-sm-3">
 				<div class="logo">
 					<h6><img src="/jiuyexiangmu/home/assets/images/logo.png" alt="logo" /></h6>
@@ -293,7 +435,7 @@
 					<div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
 						<!-- .home-slider -->
 						<div class="carousel-inner">
-							<div class="item active" style="background-image: url(assets/images/home-header1.jpg);  background-repeat: no-repeat; background-position: top;">
+							<div class="item active">
 								<div class="container">		
 									<div class="caption">
 									<div class="caption-outer">
@@ -317,7 +459,7 @@
 								</div>
 								
 							</div>
-							<div class="item" style="background-image: url(assets/images/home-header2.jpg);  background-repeat: no-repeat; background-position: top;">
+							<div class="item">
 								<div class="container">		
 									<div class="caption">
 									<div class="caption-outer">
@@ -340,7 +482,7 @@
 								</div>
 								</div>
 							</div>
-							<div class="item" style="background-image: url(assets/images/home-header3.jpg);  background-repeat: no-repeat; background-position: top;">
+							<div class="item">
 								<div class="container">		
 									<div class="caption">
 									<div class="caption-outer">
@@ -4934,7 +5076,7 @@
 												<!-- e-product -->
 												<div class="e-product">
 													<div class="pro-img">
-														<img src="/jiuyexiangmu/home/assets/images/" alt="2">
+														<img src="/jiuyexiangmu/home/assets/images/elec-img2.jpg" alt="2">
 														<div class="hover-icon">
 															<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
 														</div>
@@ -5776,5 +5918,11 @@
 	<a href="#top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 </p>
 @include('/home.laouts.js')
+
+<script>
+@if(request('action') == 'login')
+$('.modal').modal();
+@endif
+</script>
 </body>
 </html>

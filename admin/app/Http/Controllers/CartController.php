@@ -13,7 +13,6 @@ class CartController extends Controller
     	$data = $request->only(['goods_id','num']);
     	$data['created_at'] = date('Y-m-d H:i:s');
     	$data['user_id'] = session('id');
-
     	//将数据插入到购物车表中
     	if($res = DB::table('carts')->insert($data)) {
     		return view('home.remind.cart');

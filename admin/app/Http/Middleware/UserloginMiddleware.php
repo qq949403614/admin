@@ -4,11 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class AdminMiddleware
+class UserloginMiddleware
 {
-    /**
-     * 用户管理中间件
-     */
     /**
      * Handle an incoming request.
      *
@@ -18,11 +15,10 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // dd(empty($id));die;
-        $id = session('uid');
+        $id = session('id');
         // 判断是否登录
         if (empty($id)) {
-            return redirect('/admin/login')->with('msg','登录失败!!!');
+            return redirect('/index.php?action=login');
         }
         return $next($request);
     }

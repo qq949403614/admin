@@ -24,10 +24,8 @@ class LoginController extends Controller
     		return back()->with('msg','用户名输入有误');
     	}
     	if(Hash::check($data['password'],$user->password)){
-            session(['id'=> $user->id]);
+            session(['uid'=> $user->id]);
             session(['username'=> $user->username]);
-    		// session('username',$user->username);
-            // dd(session('id',$user->id));die;
     		return redirect('/admin')->with('msg','登陆成功!!!');
     	}
     	return back()->with('msg','用户密码输入有误');

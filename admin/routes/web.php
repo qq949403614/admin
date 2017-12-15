@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,22 +24,28 @@ Route::get('/detail','DetailController@detail');
 Route::get('home','HomeController@index');
 Route::get('message','CommonController@message');
 Route::get('confirm/{id}','HomeController@confirm');
+// 购物车
 Route::get('/goods/list','GoodsController@glist');
-Route::post('/cart','CartController@store');
-Route::get('/cart','CartController@index');
-Route::get('/cart/delete','CartController@delete');
+Route::get('/goods/{id}','GoodsController@show');
+// 下订单前验证是否登录
+route::group(['middleware'=>'user'],function(){
+	Route::post('cart','CartController@store');
+	Route::get('/cart','CartController@index');
+	Route::get('/cart/delete','CartController@delete');
+});
 //注册
-
+Route::get('login','EntryController@login');
+route::post('login','EntryController@login');
+Route::get('message','EntryController@store');
+Route::post('entry','EntryController@entry');
 //留言管理
 Route::get('home/contact','ContactController@index');
 route::post('contact/edit','ContactController@edit');
 route::get('admin/comment','ContactController@comment');
 route::post('/destroy/{id}','ContactController@destroy');
-
 //后台登录路由规则
 route::get('admin/login','LoginController@login');
 route::post('admin/login','LoginController@dologin');
-
 //后台登录路由组
 route::group(['middleware'=>'admin'],function(){
 	// 后台首页
