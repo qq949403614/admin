@@ -7,11 +7,6 @@ use DB;
 
 class GoodsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
 
@@ -32,14 +27,6 @@ class GoodsController extends Controller
         //解析模板
         return view('admin.goods.index', ['goods'=>$goods,'keywords' => $keywords,'num' => $num]);
     }
-
-    
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $data = $request->only(['title','price','content','kucun']);
@@ -75,16 +62,8 @@ class GoodsController extends Controller
            return redirect('/goods')->with('msg','添加成功');
         }else{
             return redirect('/goods')->with('msg','添加失败!');
-        }
-        
+        }   
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //读取商品的详细信息
@@ -105,14 +84,6 @@ class GoodsController extends Controller
         $goods_pic = DB::table('goods_pic')->where('goods_id', $id)->get();
         return view('admin.goods.edit',['goods'=>$goods,'goods_pic'=>$goods_pic]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         // 接受发送信息
@@ -149,18 +120,15 @@ class GoodsController extends Controller
             return redirect('/goods')->with('msg','修改失败!!!');
         }
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        //删除
+        if (DB::table('goods')->where('id',$id)->delete() && DB::table('goods_pic')->where('goods_id',$id)->delete()) {
+           return back()->with('msg','删除成功');
+        }else{
+           return back()->with('msg','删除失败');
+        }
     }
-
     public function glist()
     {
         //读取商品
@@ -174,7 +142,12 @@ class GoodsController extends Controller
             $value->pic = DB::table('goods_pic')->where('goods_id', $value->id)->value('pic');
         }
         //显示模板
-        return view('home.goods.list',compact('goods'));
-        
+        return view('home.goods.list',compact('goods'));   
+    }
+    public function before($id)
+    {
+        $goods = DB::table('goods')->where('id',$id)->first();
+        $goods_pic = DB::table('goods_pic')->where('goods_id', $id)->get();
+        return view('home.goods.show',['goods'=>$goods,'goods_pic'=>$goods_pic]);
     }
 }

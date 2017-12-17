@@ -18,9 +18,7 @@ Route::get('/', function () {
 
 Route::get('/center','CenterController@center');
 Route::get('/contact','ContactController@contact');
-Route::get('/cart','CartController@cart');
 Route::get('/checkout','CheckoutController@checkout');
-
 Route::get('/detail','DetailController@detail');
 
 Route::get('home','HomeController@index');
@@ -30,6 +28,7 @@ Route::get('confirm/{id}','HomeController@confirm');
 // 购物车
 Route::get('/goods/list','GoodsController@glist');
 Route::get('/goods/{id}','GoodsController@show');
+Route::get('/home/goods/{id}','GoodsController@before');
 // 下订单前验证是否登录
 route::group(['middleware'=>'user'],function(){
 	Route::post('cart','CartController@store');

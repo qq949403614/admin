@@ -242,7 +242,6 @@
 						</div>
 						<div class="toprating-box">
 							<ul>
-							
 								<li>
 								@foreach($goods as $k=>$v)
                                     <div class="e-product">
@@ -256,7 +255,6 @@
 									</div>
 								@endforeach
                                 </li>
-							 
 							</ul>
 						</div>
 					</div>
@@ -286,10 +284,8 @@
 						<!-- .pro-text -->
 						@foreach($goods as $k=>$v)
 						<div class="pro-text">
-
 							<div class="col-xs-12 col-sm-5 col-md-5">
 								<!-- .pro-img -->
-							
 								<div class="pro-img"><img src="{{$v->pic}}" class="img-responsive" alt="2">
 									<sup class="sale-tag">sale!</sup>
 									<!-- .hover-icon -->
@@ -303,7 +299,7 @@
 							<div class="col-xs-12 col-sm-7 col-md-7">
 								<div class="pro-text-outer list-pro-text">
 									<span>Macbook, Laptop</span>
-									<a href="/goods/{{$v->id}}">
+									<a href="/home/goods/{{$v->id}}">
 										<h4> {{$v->title}} </h4>
 									</a>
 									<div class="star2">
