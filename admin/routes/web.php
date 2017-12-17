@@ -35,8 +35,7 @@ route::group(['middleware'=>'user'],function(){
 	Route::post('cart','CartController@store');
 	Route::get('/cart','CartController@index');
 	Route::get('/cart/delete','CartController@delete');
-
-		//个人中心
+	//个人中心
     Route::get('/center','UserController@center');
     Route::resource('address','AddressController');
     Route::get('/getarea','AddressController@getarea');
@@ -53,9 +52,7 @@ Route::get('home/contact','ContactController@index');
 route::post('contact/edit','ContactController@edit');
 route::get('admin/comment','ContactController@comment');
 route::post('/destroy/{id}','ContactController@destroy');
-
 //后台登录路由规则
-
 route::get('admin/login','LoginController@login');
 route::post('admin/login','LoginController@dologin');
 //后台登录路由组
@@ -69,22 +66,16 @@ route::group(['middleware'=>'admin'],function(){
 	Route::resource('article','ArticleController');
 	// 导航管理
 	Route::resource('cate','CateController');
-
-
-
-
-
-  
-
 	// 留言管理
 	Route::resource('comment','CommentController');
 	// 店铺管理
 	Route::resource('shop','ShopController');
 	Route::get('area','ShopController@area');
 	// 商品管理
-
+	route::get('/goods/create','GoodsController@create');
 	Route::resource('goods','GoodsController');
-
+	
+	// 退出登录
     Route::get('/logout','LoginController@logout');
 });	
 

@@ -30,23 +30,10 @@ class GoodsController extends Controller
         }
 
         //解析模板
-        return view('admin.goods.index', [
-            'goods'=>$goods,
-            'keywords' => $keywords,
-            'num' => $num
-            ]);
+        return view('admin.goods.index', ['goods'=>$goods,'keywords' => $keywords,'num' => $num]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('admin.goods.create');
-    }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -56,13 +43,10 @@ class GoodsController extends Controller
     public function store(Request $request)
     {
         $data = $request->only(['title','price','content','kucun']);
-        //补时间
         $data['created_at'] = date('Y-m-d H:i:s');
         $data['status'] = 1;
-
         //将数据插入到商品表中
         $res = DB::table('goods')->insertGetId($data);
-
         //如果插入成功
         if($res > 0){
             //处理图片
@@ -108,18 +92,18 @@ class GoodsController extends Controller
         //读取商品的图片信息
         $goods_pic = DB::table('goods_pic')->where('goods_id', $id)->get();
 
-        return view('home.goods.show', compact('goods','goods_pic'));// ['goods'=>$goods]
+        return view('admin.goods.create', compact('goods','goods_pic'));// ['goods'=>$goods]
     }
+    public function create()
+    {
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+        return view('admin.goods.create');
+    }
     public function edit($id)
     {
-        //
+        $goods = DB::table('goods')->where('id',$id)->first();
+        $goods_pic = DB::table('goods_pic')->where('goods_id', $id)->get();
+        return view('admin.goods.edit',['goods'=>$goods,'goods_pic'=>$goods_pic]);
     }
 
     /**
@@ -131,7 +115,39 @@ class GoodsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // 接受发送信息
+        $data = $request->only('title','price','kucun','content');
+        $data['created_at'] = date('Y-m-d H:i:s');
+        $data['status'] = 1;
+        $res = DB::table('goods')->where('id',$id)->update($data);
+        //如果插入成功
+        if($res > 0){
+            //处理图片
+            if($request->hasFile('pic')){
+                $images = [];
+                foreach ($request->file('pic') as $k=>$v) {
+                    $tmp = [];
+                    // 获取文件后缀
+                    $suffix = $v->extension(); 
+                    // 创建随机名称
+                    $name = uniqid('img_').'.'.$suffix;
+                    // 文件夹路径
+                    $dir = './uploads/'.date('Y-m-d');
+                    // 移动文件
+                    $v->move($dir,$name);          
+                    // 获取文件的路径
+                    $tmp['goods_id'] = $res;
+                    $tmp['pic'] = trim($dir.'/'.$name,'.');
+                    $images[] = $tmp;
+                    
+                }
+                //将图片信息插入到商品图片表中
+                DB::table('goods_pic')->insert($images);
+            }
+           return redirect('/goods')->with('msg','修改成功!!!');
+        }else{
+            return redirect('/goods')->with('msg','修改失败!!!');
+        }
     }
 
     /**

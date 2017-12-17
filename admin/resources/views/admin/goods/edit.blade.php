@@ -1,6 +1,6 @@
 @extends('admin.index')
 @section('title')
-<title>商品添加</title>
+<title>修改商品信息</title>
 @endsection
 @section('content')
 
@@ -14,37 +14,40 @@
 <header class="wrapper">
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 class="page-header">商品添加</h2>
+			<h2 class="page-header">修改</h2>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-lg-12">
 	      <section class="panel">
-	          <header class="panel-heading">添加商品信息</header>
+	          <header class="panel-heading">修改商品信息</header>
 	          <div class="panel-body">
-	              <form class="form-horizontal " method="post" action="/goods" enctype="multipart/form-data">
+	              <form class="form-horizontal " method="post" action="/goods/{{$goods->id}}" enctype="multipart/form-data">
 	                  <div class="form-group">
 	                      <label class="col-sm-2 control-label" name="title">商品名称</label>
 	                      <div class="col-sm-5">
-	                          <input type="text" class="form-control round-input" name="title"> 
+	                          <input type="text" class="form-control round-input" name="title" value="{{$goods->title}}"> 
 	                      </div>
 	                  </div>
 	                  <div class="form-group">
 	                      <label class="col-sm-2 control-label" name="price">价格</label>
 	                      <div class="col-sm-5">
-	                          <input type="text" class="form-control round-input" name="price" >
+	                          <input type="text" class="form-control round-input" name="price" value="{{$goods->price}}">
 	                      </div>
 	                  </div>
 	                  <div class="form-group">
 	                      <label class="col-sm-2 control-label" name="kucun">库存</label>
 	                      <div class="col-sm-5">
-	                          <input type="text" class="form-control round-input" name="kucun">
+	                          <input type="text" class="form-control round-input" name="kucun" value="{{$goods->kucun}}">
 	                      </div>
 	                  </div>
 
 	                  <div class="form-group">
 	                      <label class="col-sm-2 control-label" name="pic">商品图片</label>
 	                      <div class="col-sm-5">
+							  @foreach($goods_pic as $k=>$v)
+	                      	  <img src="{{$v->pic}}" width:="50px" height="50px">
+	                      	  @endforeach
 	                          <input type="file" name="pic[]" multiple>
 	                      </div>
 	                  </div>
@@ -52,11 +55,12 @@
 	                  <div class="form-group">
 	                      <label class="col-sm-2 control-label" name="content">商品详情</label>
 	                      <div class="col-sm-5">
-	                          <script id="editor" name="content" type="text/plain" style="width:800px;height:300px;"></script>
+	                          <script id="editor" name="content" type="text/plain" style="width:800px;height:300px;">{!!$goods->content!!}</script>
 	                      </div>
 	                  </div> 
 	                  <div class="form-group text-center">
 	                  	<div class="col-sm-3">
+	                  	{{method_field('PUT')}}
 	                  	{{csrf_field()}}
 	                      <input type="submit" class="btn btn-info text-center"></input>
 						</div>
